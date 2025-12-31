@@ -365,7 +365,10 @@
             container.innerHTML = '';
             container.classList.add('loaded');
 
-            warData.forEach((player, index) => {
+            // Sort by map position (same order as in-game)
+            const sortedPlayers = [...warData].sort((a, b) => a.mapPosition - b.mapPosition);
+
+            sortedPlayers.forEach((player, index) => {
                 const card = document.createElement('div');
                 card.className = 'player-card';
                 card.innerHTML = `
@@ -423,7 +426,10 @@
                 return;
             }
 
-            const results = warData.map((player, index) => {
+            // Sort by map position to match display order
+            const sortedPlayers = [...warData].sort((a, b) => a.mapPosition - b.mapPosition);
+
+            const results = sortedPlayers.map((player, index) => {
                 const stars1 = parseInt(document.getElementById(`stars1-${index}`).value) || 0;
                 const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
                 const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
@@ -457,7 +463,10 @@
                 return;
             }
 
-            const results = warData.map((player, index) => {
+            // Sort by map position to match display order
+            const sortedPlayers = [...warData].sort((a, b) => a.mapPosition - b.mapPosition);
+
+            const results = sortedPlayers.map((player, index) => {
                 const stars1 = parseInt(document.getElementById(`stars1-${index}`).value) || 0;
                 const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
                 const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
