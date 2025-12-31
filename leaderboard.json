@@ -1,18 +1,23 @@
 {
-  "lastUpdated": "2025-12-31T23:04:41.148Z",
+  "lastUpdated": "2025-12-31T23:13:33.736Z",
   "players": [
     {
       "name": "100% dado",
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -20,13 +25,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -34,13 +44,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -48,13 +63,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -62,13 +82,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -76,13 +101,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -90,13 +120,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -104,13 +139,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -118,13 +158,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -132,13 +177,18 @@
       "townHallLevel": 18,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -146,13 +196,18 @@
       "townHallLevel": 17,
       "totalStars": 6,
       "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -160,13 +215,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 199,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 99
+        "percentage": 99,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -174,13 +234,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 197,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 97
+        "percentage": 97,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -188,13 +253,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 197,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 97
+        "percentage": 97,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -202,13 +272,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 195,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 95
+        "percentage": 95,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -216,13 +291,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 193,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 93
+        "percentage": 93,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -230,13 +310,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 190,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 90
+        "percentage": 90,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -244,13 +329,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 187,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 87
+        "percentage": 87,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -258,13 +348,18 @@
       "townHallLevel": 18,
       "totalStars": 5,
       "totalPercentage": 178,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 78
+        "percentage": 78,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -272,13 +367,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 189,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 97
+        "percentage": 97,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 92
+        "percentage": 92,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -286,13 +386,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 189,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 95
+        "percentage": 95,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 94
+        "percentage": 94,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -300,13 +405,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 185,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 86
+        "percentage": 86,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 99
+        "percentage": 99,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -314,13 +424,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 185,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 1,
-        "percentage": 85
+        "percentage": 85,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 3,
-        "percentage": 100
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -328,13 +443,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 181,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 85
+        "percentage": 85,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 96
+        "percentage": 96,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -342,13 +462,18 @@
       "townHallLevel": 18,
       "totalStars": 4,
       "totalPercentage": 181,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 95
+        "percentage": 95,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 86
+        "percentage": 86,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -356,13 +481,18 @@
       "townHallLevel": 15,
       "totalStars": 4,
       "totalPercentage": 176,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 81
+        "percentage": 81,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 95
+        "percentage": 95,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -370,13 +500,18 @@
       "townHallLevel": 15,
       "totalStars": 4,
       "totalPercentage": 139,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 69
+        "percentage": 69,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 2,
-        "percentage": 70
+        "percentage": 70,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -384,13 +519,18 @@
       "townHallLevel": 18,
       "totalStars": 3,
       "totalPercentage": 176,
+      "missedAttacks": 0,
       "attack1": {
         "stars": 2,
-        "percentage": 93
+        "percentage": 93,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 1,
-        "percentage": 83
+        "percentage": 83,
+        "isLoot": false,
+        "missed": false
       }
     },
     {
@@ -398,13 +538,18 @@
       "townHallLevel": 18,
       "totalStars": 0,
       "totalPercentage": 0,
+      "missedAttacks": 2,
       "attack1": {
         "stars": 0,
-        "percentage": 0
+        "percentage": 0,
+        "isLoot": false,
+        "missed": true
       },
       "attack2": {
         "stars": 0,
-        "percentage": 0
+        "percentage": 0,
+        "isLoot": false,
+        "missed": true
       }
     },
     {
@@ -412,13 +557,18 @@
       "townHallLevel": 15,
       "totalStars": 0,
       "totalPercentage": 0,
+      "missedAttacks": 2,
       "attack1": {
         "stars": 0,
-        "percentage": 0
+        "percentage": 0,
+        "isLoot": false,
+        "missed": true
       },
       "attack2": {
         "stars": 0,
-        "percentage": 0
+        "percentage": 0,
+        "isLoot": false,
+        "missed": true
       }
     }
   ]
