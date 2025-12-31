@@ -371,6 +371,13 @@
             sortedPlayers.forEach((player, index) => {
                 const card = document.createElement('div');
                 card.className = 'player-card';
+                
+                // Get prefilled attack data
+                const attack1Stars = player.attack1?.stars || 0;
+                const attack1Percent = player.attack1?.percentage || 0;
+                const attack2Stars = player.attack2?.stars || 0;
+                const attack2Percent = player.attack2?.percentage || 0;
+                
                 card.innerHTML = `
                     <div class="player-header">
                         <div>
@@ -384,16 +391,16 @@
                             <div class="input-group">
                                 <label>Stars</label>
                                 <div class="star-buttons">
-                                    <button type="button" class="star-btn selected" onclick="selectStars(${index}, 1, 0)">0</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 1)">1⭐</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 2)">2⭐</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 3)">3⭐</button>
+                                    <button type="button" class="star-btn ${attack1Stars === 0 ? 'selected' : ''}" onclick="selectStars(${index}, 1, 0)">0</button>
+                                    <button type="button" class="star-btn ${attack1Stars === 1 ? 'selected' : ''}" onclick="selectStars(${index}, 1, 1)">1⭐</button>
+                                    <button type="button" class="star-btn ${attack1Stars === 2 ? 'selected' : ''}" onclick="selectStars(${index}, 1, 2)">2⭐</button>
+                                    <button type="button" class="star-btn ${attack1Stars === 3 ? 'selected' : ''}" onclick="selectStars(${index}, 1, 3)">3⭐</button>
                                 </div>
-                                <input type="hidden" id="stars1-${index}" value="0">
+                                <input type="hidden" id="stars1-${index}" value="${attack1Stars}">
                             </div>
                             <div class="input-group">
                                 <label>Destruction %</label>
-                                <input type="number" id="percent1-${index}" min="0" max="100" value="0">
+                                <input type="number" id="percent1-${index}" min="0" max="100" value="${attack1Percent}">
                             </div>
                         </div>
                         <div class="attack-section">
@@ -401,16 +408,16 @@
                             <div class="input-group">
                                 <label>Stars</label>
                                 <div class="star-buttons">
-                                    <button type="button" class="star-btn selected" onclick="selectStars(${index}, 2, 0)">0</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 1)">1⭐</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 2)">2⭐</button>
-                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 3)">3⭐</button>
+                                    <button type="button" class="star-btn ${attack2Stars === 0 ? 'selected' : ''}" onclick="selectStars(${index}, 2, 0)">0</button>
+                                    <button type="button" class="star-btn ${attack2Stars === 1 ? 'selected' : ''}" onclick="selectStars(${index}, 2, 1)">1⭐</button>
+                                    <button type="button" class="star-btn ${attack2Stars === 2 ? 'selected' : ''}" onclick="selectStars(${index}, 2, 2)">2⭐</button>
+                                    <button type="button" class="star-btn ${attack2Stars === 3 ? 'selected' : ''}" onclick="selectStars(${index}, 2, 3)">3⭐</button>
                                 </div>
-                                <input type="hidden" id="stars2-${index}" value="0">
+                                <input type="hidden" id="stars2-${index}" value="${attack2Stars}">
                             </div>
                             <div class="input-group">
                                 <label>Destruction %</label>
-                                <input type="number" id="percent2-${index}" min="0" max="100" value="0">
+                                <input type="number" id="percent2-${index}" min="0" max="100" value="${attack2Percent}">
                             </div>
                         </div>
                     </div>

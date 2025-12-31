@@ -36,20 +36,43 @@ async function fetchCurrentWar() {
     }
 }
 
-// Extract participant information
+// Extract participant information with attack data
 function extractParticipants(warData) {
     if (warData.state === 'notInWar') {
         console.log('Clan is not currently in war');
         return [];
     }
 
-    const participants = warData.clan.members.map(member => ({
-        tag: member.tag,
-        name: member.name,
-        townHallLevel: member.townhallLevel,
-        mapPosition: member.mapPosition,
-        attacks: member.attacks || []
-    }));
+    const participants = warData.clan.members.map(member => {
+        const attacks = member.attacks || [];
+        
+        // Extract attack 1 data
+        let attack1 = { stars: 0, percentage: 0 };
+        if (attacks.length > 0) {
+            attack1 = {
+                stars: attacks[0].stars || 0,
+                percentage: attacks[0].destructionPercentage || 0
+            };
+        }
+
+        // Extract attack 2 data
+        let attack2 = { stars: 0, percentage: 0 };
+        if (attacks.length > 1) {
+            attack2 = {
+                stars: attacks[1].stars || 0,
+                percentage: attacks[1].destructionPercentage || 0
+            };
+        }
+
+        return {
+            tag: member.tag,
+            name: member.name,
+            townHallLevel: member.townhallLevel,
+            mapPosition: member.mapPosition,
+            attack1: attack1,
+            attack2: attack2
+        };
+    });
 
     return participants;
 }
