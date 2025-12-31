@@ -48,6 +48,7 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
                 totalStars: 0,
                 totalPercentage: 0,
                 totalAttacks: 0,
+                totalMissedAttacks: 0,
                 warsParticipated: 0,
                 attackHistory: []
             };
@@ -59,6 +60,7 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
         playerStats.totalStars += player.totalStars;
         playerStats.totalPercentage += player.totalPercentage;
         playerStats.totalAttacks += 2; // Assuming 2 attacks per war
+        playerStats.totalMissedAttacks += (player.missedAttacks || 0);
         playerStats.warsParticipated += 1;
 
         // Add this war's performance to history
@@ -66,6 +68,7 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
             warNumber: cumulativeStats.totalWars,
             stars: player.totalStars,
             percentage: player.totalPercentage,
+            missedAttacks: player.missedAttacks || 0,
             date: cumulativeStats.lastUpdated
         });
     });
@@ -81,6 +84,7 @@ function generateCumulativeLeaderboard(cumulativeStats) {
         townHallLevel: player.townHallLevel,
         totalStars: player.totalStars,
         totalPercentage: player.totalPercentage,
+        totalMissedAttacks: player.totalMissedAttacks || 0,
         warsParticipated: player.warsParticipated,
         averageStars: (player.totalStars / player.warsParticipated).toFixed(2),
         averagePercentage: (player.totalPercentage / player.warsParticipated).toFixed(1)

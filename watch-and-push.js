@@ -1,6 +1,7 @@
 const fs = require('fs');
-const { execSync } = require('child_process');
 const path = require('path');
+const { execSync } = require('child_process');
+const os = require('os');
 
 // Configuration
 const CONFIG = {
@@ -9,7 +10,13 @@ const CONFIG = {
     CHECK_INTERVAL: 2000, // Check every 2 seconds
 };
 
+// Get Downloads folder path
+function getDownloadsPath() {
+    return path.join(os.homedir(), 'Downloads');
+}
+
 let lastModifiedTime = null;
+let lastDownloadsModifiedTime = null;
 let isFirstRun = true;
 
 // Get file modification time
@@ -20,6 +27,31 @@ function getFileModifiedTime(filePath) {
     } catch (error) {
         return null;
     }
+}
+
+// Move file from Downloads to project folder
+function moveFromDownloads() {
+    const downloadsPath = path.join(getDownloadsPath(), CONFIG.WATCH_FILE);
+    const projectPath = path.join(CONFIG.GITHUB_REPO_PATH, CONFIG.WATCH_FILE);
+    
+    try {
+        if (fs.existsSync(downloadsPath)) {
+            console.log('📥 Found leaderboard.json in Downloads!');
+            console.log('📦 Moving to project folder...');
+            
+            // Copy file to project folder
+            fs.copyFileSync(downloadsPath, projectPath);
+            
+            // Delete from Downloads
+            fs.unlinkSync(downloadsPath);
+            
+            console.log('✅ File moved successfully!\n');
+            return true;
+        }
+    } catch (error) {
+        console.error('❌ Error moving file:', error.message);
+    }
+    return false;
 }
 
 // Update cumulative stats
@@ -77,30 +109,52 @@ function pushToGitHub() {
 
 // Watch for file changes
 async function watchFile() {
-    const currentModifiedTime = getFileModifiedTime(CONFIG.WATCH_FILE);
+    const projectPath = path.join(CONFIG.GITHUB_REPO_PATH, CONFIG.WATCH_FILE);
+    const downloadsPath = path.join(getDownloadsPath(), CONFIG.WATCH_FILE);
+    
+    // Check Downloads folder first
+    const downloadsModifiedTime = getFileModifiedTime(downloadsPath);
+    if (downloadsModifiedTime !== null && downloadsModifiedTime !== lastDownloadsModifiedTime) {
+        lastDownloadsModifiedTime = downloadsModifiedTime;
+        
+        // Wait a moment to ensure file is fully written
+        setTimeout(() => {
+            if (moveFromDownloads()) {
+                // Trigger the update process
+                setTimeout(async () => {
+                    await updateCumulativeStats();
+                    pushToGitHub();
+                }, 1000);
+            }
+        }, 500);
+        return;
+    }
+    
+    // Check project folder
+    const currentModifiedTime = getFileModifiedTime(projectPath);
 
-    // If file exists
     if (currentModifiedTime !== null) {
-        // If this is first run, just store the time
         if (isFirstRun) {
             lastModifiedTime = currentModifiedTime;
             isFirstRun = false;
-            console.log(`👀 Watching ${CONFIG.WATCH_FILE} for changes...`);
-            console.log('💡 Generate a new leaderboard and I\'ll automatically:\n   1. Update cumulative stats\n   2. Push everything to GitHub\n');
+            console.log(`👀 Watching for leaderboard.json in:`);
+            console.log(`   📁 Project folder: ${path.resolve(CONFIG.GITHUB_REPO_PATH)}`);
+            console.log(`   📥 Downloads folder: ${getDownloadsPath()}`);
+            console.log('\n💡 Generate a leaderboard and I\'ll automatically:');
+            console.log('   1. Move it from Downloads to project folder');
+            console.log('   2. Update cumulative stats');
+            console.log('   3. Push everything to GitHub\n');
         }
-        // If file was modified since last check
         else if (lastModifiedTime !== null && currentModifiedTime > lastModifiedTime) {
             console.log(`\n📄 ${CONFIG.WATCH_FILE} was updated!`);
             lastModifiedTime = currentModifiedTime;
             
-            // Wait a moment to ensure file is fully written
             setTimeout(async () => {
                 await updateCumulativeStats();
                 pushToGitHub();
             }, 1000);
         }
     } else {
-        // File doesn't exist yet
         if (lastModifiedTime !== null) {
             console.log(`⚠️  ${CONFIG.WATCH_FILE} was deleted`);
             lastModifiedTime = null;
@@ -111,8 +165,6 @@ async function watchFile() {
 // Start watching
 console.log('🎯 Leaderboard Auto-Updater Started!');
 console.log('====================================');
-console.log(`📁 Watching for: ${CONFIG.WATCH_FILE}`);
-console.log(`📂 In directory: ${path.resolve(CONFIG.GITHUB_REPO_PATH)}`);
 console.log(`⏱️  Checking every ${CONFIG.CHECK_INTERVAL / 1000} seconds`);
 console.log('====================================\n');
 

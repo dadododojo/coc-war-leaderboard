@@ -93,7 +93,7 @@
 
         .player-row {
             display: grid;
-            grid-template-columns: 80px 1fr 120px 120px 100px 150px;
+            grid-template-columns: 80px 1fr 120px 120px 100px 100px 150px;
             gap: 20px;
             align-items: center;
             padding: 20px;
@@ -270,6 +270,11 @@
                 font-size: 0.9em;
             }
         }
+
+        .missed-indicator {
+            color: #e74c3c;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -370,7 +375,15 @@
                 const row = document.createElement('div');
                 row.className = `player-row ${rankClass}`;
                 row.style.animationDelay = `${index * 0.1}s`;
-                row.style.gridTemplateColumns = '80px 1fr 100px 100px 150px';
+                row.style.gridTemplateColumns = '80px 1fr 100px 100px 80px 150px';
+                
+                // Format attack details with loot/missed indicators
+                const attack1Text = player.attack1.isLoot ? '🪙 Loot' : 
+                                   player.attack1.missed ? '❌ Missed' :
+                                   `${player.attack1.stars}⭐ ${player.attack1.percentage}%`;
+                const attack2Text = player.attack2.isLoot ? '🪙 Loot' : 
+                                   player.attack2.missed ? '❌ Missed' :
+                                   `${player.attack2.stars}⭐ ${player.attack2.percentage}%`;
                 
                 row.innerHTML = `
                     <div class="rank">#${rank}</div>
@@ -386,9 +399,13 @@
                         <div class="stat-value">${player.totalPercentage}%</div>
                         <div class="stat-label">Destruction</div>
                     </div>
+                    <div class="stat">
+                        <div class="stat-value ${player.missedAttacks > 0 ? 'missed-indicator' : ''}">${player.missedAttacks}</div>
+                        <div class="stat-label">Missed</div>
+                    </div>
                     <div class="attacks-detail">
-                        <div>Attack 1: ${player.attack1.stars}⭐ ${player.attack1.percentage}%</div>
-                        <div>Attack 2: ${player.attack2.stars}⭐ ${player.attack2.percentage}%</div>
+                        <div>Attack 1: ${attack1Text}</div>
+                        <div>Attack 2: ${attack2Text}</div>
                     </div>
                 `;
 
@@ -431,6 +448,10 @@
                         <div class="stat-value">${player.totalPercentage}%</div>
                         <div class="stat-label">Total Destruction</div>
                         <div class="stat-small">Avg: ${player.averagePercentage}%</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value ${player.totalMissedAttacks > 0 ? 'missed-indicator' : ''}">${player.totalMissedAttacks || 0}</div>
+                        <div class="stat-label">Total Missed</div>
                     </div>
                     <div class="wars-count">
                         <strong>${player.warsParticipated}</strong><br>

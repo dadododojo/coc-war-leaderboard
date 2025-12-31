@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+let warData = [];
+
+        // Try to auto-load war-data.json (works when using a web server)
+        async function autoLoadWarData() {
+            try {
+                const response = await fetch('war-data.json');
+                if (!response.ok) throw new Error('File not found');
+                
+                const data = await response.json();
+                warData = data.participants;
+                displayPlayers();
+                showStatus('War data loaded automatically! ✨', 'success');
+                
+                // Enable buttons
+                document.getElementById('saveBtn').disabled = false;
+                document.getElementById('leaderboardBtn').disabled = false;
+                
+                // Hide upload section since data is already loaded
+                document.querySelector('.upload-section').style.display = 'none';
+                
+                return true;
+            } catch (error) {
+                // Auto-load failed, user will need to upload manually
+                console.log('Auto-load not available. Please upload file manually.');
+                return false;
+            }
+        }
+
+        // Select star rating<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -183,6 +211,29 @@
             background: #3498db;
             color: white;
             border-color: #3498db;
+        }
+
+        .loot-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .loot-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .loot-checkbox label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 500;
         }
 
         .actions {
@@ -402,6 +453,10 @@
                                 <label>Destruction %</label>
                                 <input type="number" id="percent1-${index}" min="0" max="100" value="${attack1Percent}">
                             </div>
+                            <div class="loot-checkbox">
+                                <input type="checkbox" id="loot1-${index}">
+                                <label for="loot1-${index}">🪙 Loot Attack (Don't Count)</label>
+                            </div>
                         </div>
                         <div class="attack-section">
                             <h3>⚔️ Attack 2</h3>
@@ -418,6 +473,10 @@
                             <div class="input-group">
                                 <label>Destruction %</label>
                                 <input type="number" id="percent2-${index}" min="0" max="100" value="${attack2Percent}">
+                            </div>
+                            <div class="loot-checkbox">
+                                <input type="checkbox" id="loot2-${index}">
+                                <label for="loot2-${index}">🪙 Loot Attack (Don't Count)</label>
                             </div>
                         </div>
                     </div>
@@ -478,23 +537,52 @@
                 const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
                 const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
                 const percent2 = parseInt(document.getElementById(`percent2-${index}`).value) || 0;
+                
+                // Check if attacks are loot attacks (should not count)
+                const isLoot1 = document.getElementById(`loot1-${index}`).checked;
+                const isLoot2 = document.getElementById(`loot2-${index}`).checked;
+
+                // Check for missed attacks (0 stars, 0%, not a loot attack)
+                const missedAttack1 = !isLoot1 && stars1 === 0 && percent1 === 0;
+                const missedAttack2 = !isLoot2 && stars2 === 0 && percent2 === 0;
+                const missedAttacks = (missedAttack1 ? 1 : 0) + (missedAttack2 ? 1 : 0);
+
+                // Calculate totals (excluding loot attacks)
+                const countedStars1 = isLoot1 ? 0 : stars1;
+                const countedPercent1 = isLoot1 ? 0 : percent1;
+                const countedStars2 = isLoot2 ? 0 : stars2;
+                const countedPercent2 = isLoot2 ? 0 : percent2;
 
                 return {
                     name: player.name,
                     townHallLevel: player.townHallLevel,
-                    totalStars: stars1 + stars2,
-                    totalPercentage: percent1 + percent2,
-                    attack1: { stars: stars1, percentage: percent1 },
-                    attack2: { stars: stars2, percentage: percent2 }
+                    totalStars: countedStars1 + countedStars2,
+                    totalPercentage: countedPercent1 + countedPercent2,
+                    missedAttacks: missedAttacks,
+                    attack1: { 
+                        stars: stars1, 
+                        percentage: percent1,
+                        isLoot: isLoot1,
+                        missed: missedAttack1
+                    },
+                    attack2: { 
+                        stars: stars2, 
+                        percentage: percent2,
+                        isLoot: isLoot2,
+                        missed: missedAttack2
+                    }
                 };
             });
 
-            // Sort by stars, then percentage
+            // Sort by stars (desc), then percentage (desc), then missed attacks (asc)
             results.sort((a, b) => {
                 if (b.totalStars !== a.totalStars) {
                     return b.totalStars - a.totalStars;
                 }
-                return b.totalPercentage - a.totalPercentage;
+                if (b.totalPercentage !== a.totalPercentage) {
+                    return b.totalPercentage - a.totalPercentage;
+                }
+                return a.missedAttacks - b.missedAttacks;
             });
 
             const leaderboardData = {
@@ -502,7 +590,7 @@
                 players: results
             };
 
-            // Download leaderboard
+            // Save directly to project folder
             const dataStr = JSON.stringify(leaderboardData, null, 2);
             const dataBlob = new Blob([dataStr], { type: 'application/json' });
             const url = URL.createObjectURL(dataBlob);
@@ -510,8 +598,9 @@
             link.href = url;
             link.download = 'leaderboard.json';
             link.click();
+            URL.revokeObjectURL(url);
 
-            showStatus('🎉 Leaderboard generated! Upload leaderboard.json to your GitHub repo.', 'success');
+            showStatus('🎉 Leaderboard generated! File saved to Downloads. Move it to your project folder for auto-push!', 'success');
         }
 
         // Show status message
