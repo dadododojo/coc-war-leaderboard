@@ -75,8 +75,19 @@ function pushToGitHub() {
     try {
         console.log('🚀 Pushing to GitHub...');
         
-        // Add all leaderboard files
-        execSync('git add leaderboard.json leaderboard-cumulative.json cumulative-stats.json', { 
+        // Check which files exist and add them
+        const filesToAdd = [];
+        if (fs.existsSync('leaderboard.json')) filesToAdd.push('leaderboard.json');
+        if (fs.existsSync('leaderboard-cumulative.json')) filesToAdd.push('leaderboard-cumulative.json');
+        if (fs.existsSync('cumulative-stats.json')) filesToAdd.push('cumulative-stats.json');
+        
+        if (filesToAdd.length === 0) {
+            console.log('⚠️  No leaderboard files to push');
+            return;
+        }
+        
+        // Add files
+        execSync(`git add ${filesToAdd.join(' ')}`, { 
             cwd: CONFIG.GITHUB_REPO_PATH,
             stdio: 'inherit'
         });
@@ -102,7 +113,7 @@ function pushToGitHub() {
             console.log('ℹ️  No changes to push (file unchanged)\n');
         } else {
             console.error('❌ Error pushing to GitHub:', error.message);
-            console.log('Make sure you have git configured and authenticated\n');
+            console.log('💡 Tip: Make sure git is configured and you\'re authenticated\n');
         }
     }
 }

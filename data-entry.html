@@ -419,6 +419,9 @@ let warData = [];
             // Sort by map position (same order as in-game)
             const sortedPlayers = [...warData].sort((a, b) => a.mapPosition - b.mapPosition);
 
+            // Check if this is CWL (only 1 attack per player)
+            const isCWL = sortedPlayers.every(p => p.attackCount === 1 || (p.attack2.stars === 0 && p.attack2.percentage === 0));
+
             sortedPlayers.forEach((player, index) => {
                 const card = document.createElement('div');
                 card.className = 'player-card';
@@ -429,6 +432,9 @@ let warData = [];
                 const attack2Stars = player.attack2?.stars || 0;
                 const attack2Percent = player.attack2?.percentage || 0;
                 
+                // For CWL, hide attack 2 section if not used
+                const showAttack2 = !isCWL || player.attackCount === 2;
+                
                 card.innerHTML = `
                     <div class="player-header">
                         <div>
@@ -436,7 +442,7 @@ let warData = [];
                             <div class="player-info">TH${player.townHallLevel} | Position #${player.mapPosition}</div>
                         </div>
                     </div>
-                    <div class="attack-inputs">
+                    <div class="attack-inputs" style="grid-template-columns: ${showAttack2 ? 'repeat(2, 1fr)' : '1fr'};">
                         <div class="attack-section">
                             <h3>⚔️ Attack 1</h3>
                             <div class="input-group">
@@ -458,6 +464,7 @@ let warData = [];
                                 <label for="loot1-${index}">🪙 Loot Attack (Don't Count)</label>
                             </div>
                         </div>
+                        ${showAttack2 ? `
                         <div class="attack-section">
                             <h3>⚔️ Attack 2</h3>
                             <div class="input-group">
@@ -479,10 +486,15 @@ let warData = [];
                                 <label for="loot2-${index}">🪙 Loot Attack (Don't Count)</label>
                             </div>
                         </div>
+                        ` : ''}
                     </div>
                 `;
                 container.appendChild(card);
             });
+
+            if (isCWL) {
+                showStatus('🏆 CWL war detected! Only 1 attack per player.', 'success');
+            }
         }
 
         // Save all results
@@ -535,16 +547,22 @@ let warData = [];
             const results = sortedPlayers.map((player, index) => {
                 const stars1 = parseInt(document.getElementById(`stars1-${index}`).value) || 0;
                 const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
-                const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
-                const percent2 = parseInt(document.getElementById(`percent2-${index}`).value) || 0;
+                
+                // Check if attack 2 inputs exist (might not in CWL)
+                const stars2El = document.getElementById(`stars2-${index}`);
+                const percent2El = document.getElementById(`percent2-${index}`);
+                const loot2El = document.getElementById(`loot2-${index}`);
+                
+                const stars2 = stars2El ? (parseInt(stars2El.value) || 0) : 0;
+                const percent2 = percent2El ? (parseInt(percent2El.value) || 0) : 0;
                 
                 // Check if attacks are loot attacks (should not count)
                 const isLoot1 = document.getElementById(`loot1-${index}`).checked;
-                const isLoot2 = document.getElementById(`loot2-${index}`).checked;
+                const isLoot2 = loot2El ? loot2El.checked : false;
 
                 // Check for missed attacks (0 stars, 0%, not a loot attack)
                 const missedAttack1 = !isLoot1 && stars1 === 0 && percent1 === 0;
-                const missedAttack2 = !isLoot2 && stars2 === 0 && percent2 === 0;
+                const missedAttack2 = stars2El && !isLoot2 && stars2 === 0 && percent2 === 0;
                 const missedAttacks = (missedAttack1 ? 1 : 0) + (missedAttack2 ? 1 : 0);
 
                 // Calculate totals (excluding loot attacks)
@@ -600,7 +618,7 @@ let warData = [];
             link.click();
             URL.revokeObjectURL(url);
 
-            showStatus('🎉 Leaderboard generated! File saved to Downloads. Move it to your project folder for auto-push!', 'success');
+            showStatus('🎉 Leaderboard generated! File saved to Downloads. The watcher will auto-detect it!', 'success');
         }
 
         // Show status message
