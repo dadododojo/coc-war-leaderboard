@@ -1,0 +1,988 @@
+[
+  {
+    "tag": "#RU8J0CUV",
+    "name": "Venom",
+    "townHallLevel": 18,
+    "mapPosition": 22,
+    "attacks": [],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#PUUV8V08V",
+    "name": "DEADSHOT 112830",
+    "townHallLevel": 18,
+    "mapPosition": 2,
+    "attacks": [
+      {
+        "attackerTag": "#PUUV8V08V",
+        "defenderTag": "#29UG8R299",
+        "stars": 2,
+        "destructionPercentage": 90,
+        "order": 82,
+        "duration": 136
+      },
+      {
+        "attackerTag": "#PUUV8V08V",
+        "defenderTag": "#9JJQYUVC8",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 84,
+        "duration": 118
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8G8VV89JJ",
+    "name": "EvlGniz",
+    "townHallLevel": 18,
+    "mapPosition": 18,
+    "attacks": [
+      {
+        "attackerTag": "#8G8VV89JJ",
+        "defenderTag": "#YGRPURVLG",
+        "stars": 2,
+        "destructionPercentage": 95,
+        "order": 64,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#8G8VV89JJ",
+        "defenderTag": "#22RR9VP0C",
+        "stars": 2,
+        "destructionPercentage": 86,
+        "order": 72,
+        "duration": 100
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#99QUJCCYJ",
+    "name": "100% Meli",
+    "townHallLevel": 18,
+    "mapPosition": 6,
+    "attacks": [
+      {
+        "attackerTag": "#99QUJCCYJ",
+        "defenderTag": "#8VY92Q9R2",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 80,
+        "duration": 130
+      },
+      {
+        "attackerTag": "#99QUJCCYJ",
+        "defenderTag": "#PRVQ2VLYR",
+        "stars": 2,
+        "destructionPercentage": 97,
+        "order": 83,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#Q9UPUUGRL",
+    "name": "100% Rogers",
+    "townHallLevel": 18,
+    "mapPosition": 16,
+    "attacks": [
+      {
+        "attackerTag": "#Q9UPUUGRL",
+        "defenderTag": "#PRVQ2VLYR",
+        "stars": 2,
+        "destructionPercentage": 97,
+        "order": 25,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#Q9UPUUGRL",
+        "defenderTag": "#LCG22CJY8",
+        "stars": 2,
+        "destructionPercentage": 92,
+        "order": 27,
+        "duration": 153
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#2VRP9CJY",
+    "name": "Anon",
+    "townHallLevel": 18,
+    "mapPosition": 15,
+    "attacks": [
+      {
+        "attackerTag": "#2VRP9CJY",
+        "defenderTag": "#89RPQLCV0",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 51,
+        "duration": 130
+      },
+      {
+        "attackerTag": "#2VRP9CJY",
+        "defenderTag": "#9U88G8UVG",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 52,
+        "duration": 164
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#9GCJRCR8V",
+    "name": "Blood⚓️",
+    "townHallLevel": 18,
+    "mapPosition": 9,
+    "attacks": [
+      {
+        "attackerTag": "#9GCJRCR8V",
+        "defenderTag": "#Q0Q0QPL2",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 114,
+        "duration": 170
+      },
+      {
+        "attackerTag": "#9GCJRCR8V",
+        "defenderTag": "#8208QR00G",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 115,
+        "duration": 147
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8R8R0GL9",
+    "name": "«#PATRICK#»",
+    "townHallLevel": 18,
+    "mapPosition": 5,
+    "attacks": [
+      {
+        "attackerTag": "#8R8R0GL9",
+        "defenderTag": "#9V00G20GY",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 63,
+        "duration": 120
+      },
+      {
+        "attackerTag": "#8R8R0GL9",
+        "defenderTag": "#29UG8R299",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 111,
+        "duration": 121
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#2822UV20V",
+    "name": "Frost",
+    "townHallLevel": 18,
+    "mapPosition": 4,
+    "attacks": [
+      {
+        "attackerTag": "#2822UV20V",
+        "defenderTag": "#Y0U20LC2",
+        "stars": 2,
+        "destructionPercentage": 86,
+        "order": 66,
+        "duration": 141
+      },
+      {
+        "attackerTag": "#2822UV20V",
+        "defenderTag": "#9JJQYUVC8",
+        "stars": 2,
+        "destructionPercentage": 99,
+        "order": 71,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#88YGRQJJP",
+    "name": "《P D X》Destroy",
+    "townHallLevel": 17,
+    "mapPosition": 27,
+    "attacks": [
+      {
+        "attackerTag": "#88YGRQJJP",
+        "defenderTag": "#VQVJJCGV",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 13,
+        "duration": 170
+      },
+      {
+        "attackerTag": "#88YGRQJJP",
+        "defenderTag": "#Y0J2P2UVU",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 18,
+        "duration": 161
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#VQUQ8992",
+    "name": "platypus",
+    "townHallLevel": 18,
+    "mapPosition": 7,
+    "attacks": [
+      {
+        "attackerTag": "#VQUQ8992",
+        "defenderTag": "#8U8UQV2CY",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 45,
+        "duration": 136
+      },
+      {
+        "attackerTag": "#VQUQ8992",
+        "defenderTag": "#LCG22CJY8",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 50,
+        "duration": 129
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#G2PQRR0QV",
+    "name": "BlueberyPancake",
+    "townHallLevel": 18,
+    "mapPosition": 3,
+    "attacks": [
+      {
+        "attackerTag": "#G2PQRR0QV",
+        "defenderTag": "#YLJC2JLYV",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 34,
+        "duration": 143
+      },
+      {
+        "attackerTag": "#G2PQRR0QV",
+        "defenderTag": "#LL9PYVGPY",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 35,
+        "duration": 102
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#2LVYUPJ9Q",
+    "name": "Z E T S U SKY⚡",
+    "townHallLevel": 18,
+    "mapPosition": 10,
+    "attacks": [
+      {
+        "attackerTag": "#2LVYUPJ9Q",
+        "defenderTag": "#29UG8R299",
+        "stars": 1,
+        "destructionPercentage": 85,
+        "order": 16,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#2LVYUPJ9Q",
+        "defenderTag": "#9VQUUQC9J",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 17,
+        "duration": 172
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8G89CPJVU",
+    "name": "100% dado",
+    "townHallLevel": 18,
+    "mapPosition": 1,
+    "attacks": [
+      {
+        "attackerTag": "#8G89CPJVU",
+        "defenderTag": "#8208QR00G",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 1,
+        "duration": 129
+      },
+      {
+        "attackerTag": "#8G89CPJVU",
+        "defenderTag": "#8LU9Q8C9P",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 8,
+        "duration": 122
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#P8Y9JR8CP",
+    "name": "abhi",
+    "townHallLevel": 18,
+    "mapPosition": 17,
+    "attacks": [
+      {
+        "attackerTag": "#P8Y9JR8CP",
+        "defenderTag": "#YGRPURVLG",
+        "stars": 2,
+        "destructionPercentage": 95,
+        "order": 56,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#P8Y9JR8CP",
+        "defenderTag": "#22RR9VP0C",
+        "stars": 2,
+        "destructionPercentage": 94,
+        "order": 62,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8VC29JPJP",
+    "name": "Krunal",
+    "townHallLevel": 18,
+    "mapPosition": 20,
+    "attacks": [
+      {
+        "attackerTag": "#8VC29JPJP",
+        "defenderTag": "#Y0U20LC2",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 74,
+        "duration": 170
+      },
+      {
+        "attackerTag": "#8VC29JPJP",
+        "defenderTag": "#Q0Q0QPL2",
+        "stars": 2,
+        "destructionPercentage": 97,
+        "order": 75,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8Y9J09LQ8",
+    "name": "Maximus",
+    "townHallLevel": 18,
+    "mapPosition": 12,
+    "attacks": [
+      {
+        "attackerTag": "#8Y9J09LQ8",
+        "defenderTag": "#8VY92Q9R2",
+        "stars": 2,
+        "destructionPercentage": 87,
+        "order": 28,
+        "duration": 101
+      },
+      {
+        "attackerTag": "#8Y9J09LQ8",
+        "defenderTag": "#2JJRV2LCQ",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 29,
+        "duration": 103
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#YQ8V829CQ",
+    "name": "GhosTAngeL",
+    "townHallLevel": 15,
+    "mapPosition": 30,
+    "attacks": [
+      {
+        "attackerTag": "#YQ8V829CQ",
+        "defenderTag": "#8QYLYURPP",
+        "stars": 2,
+        "destructionPercentage": 69,
+        "order": 9,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#YQ8V829CQ",
+        "defenderTag": "#Y0J2P2UVU",
+        "stars": 2,
+        "destructionPercentage": 70,
+        "order": 33,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#GV90C0LU",
+    "name": "TN • Raiden",
+    "townHallLevel": 18,
+    "mapPosition": 21,
+    "attacks": [
+      {
+        "attackerTag": "#GV90C0LU",
+        "defenderTag": "#2C2GJRLJG",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 81,
+        "duration": 162
+      },
+      {
+        "attackerTag": "#GV90C0LU",
+        "defenderTag": "#8QYLYURPP",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 88,
+        "duration": 150
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#JQV99PU8",
+    "name": "SLYQZI",
+    "townHallLevel": 18,
+    "mapPosition": 23,
+    "attacks": [
+      {
+        "attackerTag": "#JQV99PU8",
+        "defenderTag": "#Q0Q0QPL2",
+        "stars": 2,
+        "destructionPercentage": 93,
+        "order": 89,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#JQV99PU8",
+        "defenderTag": "#PUUJPQ2P9",
+        "stars": 1,
+        "destructionPercentage": 83,
+        "order": 90,
+        "duration": 156
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#LYGLRCQCR",
+    "name": "100% Amos",
+    "townHallLevel": 18,
+    "mapPosition": 8,
+    "attacks": [
+      {
+        "attackerTag": "#LYGLRCQCR",
+        "defenderTag": "#29UG8R299",
+        "stars": 2,
+        "destructionPercentage": 93,
+        "order": 53,
+        "duration": 151
+      },
+      {
+        "attackerTag": "#LYGLRCQCR",
+        "defenderTag": "#PRVQ2VLYR",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 85,
+        "duration": 116
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#2GLUU0YCU",
+    "name": "DS Slyqzi",
+    "townHallLevel": 18,
+    "mapPosition": 25,
+    "attacks": [
+      {
+        "attackerTag": "#2GLUU0YCU",
+        "defenderTag": "#YGRPURVLG",
+        "stars": 2,
+        "destructionPercentage": 95,
+        "order": 91,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#2GLUU0YCU",
+        "defenderTag": "#22RR9VP0C",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 92,
+        "duration": 164
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#PRR2RJJ9U",
+    "name": "100% dadeux",
+    "townHallLevel": 18,
+    "mapPosition": 11,
+    "attacks": [
+      {
+        "attackerTag": "#PRR2RJJ9U",
+        "defenderTag": "#JUYYYQP",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 2,
+        "duration": 125
+      },
+      {
+        "attackerTag": "#PRR2RJJ9U",
+        "defenderTag": "#YY0PLUV0",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 4,
+        "duration": 149
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#LY9GC9LJQ",
+    "name": "Azend",
+    "townHallLevel": 15,
+    "mapPosition": 29,
+    "attacks": [],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#9PVL282R8",
+    "name": "NISHANT 2.O",
+    "townHallLevel": 18,
+    "mapPosition": 14,
+    "attacks": [
+      {
+        "attackerTag": "#9PVL282R8",
+        "defenderTag": "#9JJQYUVC8",
+        "stars": 2,
+        "destructionPercentage": 85,
+        "order": 41,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#9PVL282R8",
+        "defenderTag": "#29UG8R299",
+        "stars": 2,
+        "destructionPercentage": 96,
+        "order": 42,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#LGRPR89PG",
+    "name": "SLYQZI",
+    "townHallLevel": 15,
+    "mapPosition": 28,
+    "attacks": [
+      {
+        "attackerTag": "#LGRPR89PG",
+        "defenderTag": "#8QYLYURPP",
+        "stars": 2,
+        "destructionPercentage": 81,
+        "order": 86,
+        "duration": 165
+      },
+      {
+        "attackerTag": "#LGRPR89PG",
+        "defenderTag": "#Q0Q0QPL2",
+        "stars": 2,
+        "destructionPercentage": 95,
+        "order": 87,
+        "duration": 180
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#2Q908JL8C",
+    "name": "Juicy!",
+    "townHallLevel": 18,
+    "mapPosition": 19,
+    "attacks": [
+      {
+        "attackerTag": "#2Q908JL8C",
+        "defenderTag": "#PQPCGJVY0",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 57,
+        "duration": 166
+      },
+      {
+        "attackerTag": "#2Q908JL8C",
+        "defenderTag": "#9R2JC298Q",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 58,
+        "duration": 173
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#LGRPC9CYG",
+    "name": "John",
+    "townHallLevel": 18,
+    "mapPosition": 26,
+    "attacks": [
+      {
+        "attackerTag": "#LGRPC9CYG",
+        "defenderTag": "#VYYQQVR9",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 44,
+        "duration": 146
+      },
+      {
+        "attackerTag": "#LGRPC9CYG",
+        "defenderTag": "#PUUJPQ2P9",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 93,
+        "duration": 156
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#8PCGPU8Q",
+    "name": "TN • BooMS",
+    "townHallLevel": 18,
+    "mapPosition": 13,
+    "attacks": [
+      {
+        "attackerTag": "#8PCGPU8Q",
+        "defenderTag": "#29UG8R299",
+        "stars": 2,
+        "destructionPercentage": 78,
+        "order": 20,
+        "duration": 117
+      },
+      {
+        "attackerTag": "#8PCGPU8Q",
+        "defenderTag": "#8C0JQGL8Q",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 39,
+        "duration": 134
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  },
+  {
+    "tag": "#PU8L9PVJQ",
+    "name": "murph",
+    "townHallLevel": 18,
+    "mapPosition": 24,
+    "attacks": [
+      {
+        "attackerTag": "#PU8L9PVJQ",
+        "defenderTag": "#Q0Q0QPL2",
+        "stars": 2,
+        "destructionPercentage": 99,
+        "order": 94,
+        "duration": 180
+      },
+      {
+        "attackerTag": "#PU8L9PVJQ",
+        "defenderTag": "#YGRPURVLG",
+        "stars": 3,
+        "destructionPercentage": 100,
+        "order": 95,
+        "duration": 135
+      }
+    ],
+    "attack1": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "attack2": {
+      "stars": 0,
+      "percentage": 0
+    },
+    "totalStars": 0,
+    "totalPercentage": 0
+  }
+]

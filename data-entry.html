@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoC War Results Entry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .upload-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .upload-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            display: none;
+        }
+
+        .file-input-label {
+            background: white;
+            color: #4facfe;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .file-input-label:hover {
+            transform: scale(1.05);
+        }
+
+        .file-name {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .player-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .player-name {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .player-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .attack-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .attack-section {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .attack-section h3 {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background: white;
+        }
+
+        .input-group input:focus {
+            outline: 3px solid #667eea;
+        }
+
+        .star-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .star-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid white;
+            background: rgba(255,255,255,0.3);
+            color: white;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .star-btn:hover {
+            background: rgba(255,255,255,0.5);
+            transform: scale(1.05);
+        }
+
+        .star-btn.selected {
+            background: white;
+            color: #f5576c;
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            flex: 1;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .action-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .status.success {
+            background: #43e97b;
+            color: white;
+            display: block;
+        }
+
+        .status.error {
+            background: #f5576c;
+            color: white;
+            display: block;
+        }
+
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+
+        #players-container {
+            display: none;
+        }
+
+        #players-container.loaded {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ War Results Entry</h1>
+
+        <div class="instructions">
+            <h3>📖 Instructions:</h3>
+            <ol>
+                <li>First, run: <code>node fetch-war-data.js</code> in your terminal</li>
+                <li>This creates a file called <code>war-data.json</code></li>
+                <li>Click "Choose File" below and select that <code>war-data.json</code> file</li>
+                <li>Enter attack results for each player</li>
+                <li>Click "Generate Leaderboard" to create the final leaderboard file</li>
+            </ol>
+        </div>
+
+        <div class="upload-section">
+            <h2>📁 Load War Data</h2>
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" accept=".json" onchange="handleFileUpload(event)">
+                <label for="fileInput" class="file-input-label">Choose war-data.json File</label>
+            </div>
+            <div class="file-name" id="fileName">No file selected</div>
+        </div>
+
+        <div id="players-container"></div>
+        
+        <div class="actions">
+            <button class="action-btn" id="saveBtn" onclick="saveAllResults()" disabled>💾 Save All Results</button>
+            <button class="action-btn" id="leaderboardBtn" onclick="generateLeaderboard()" disabled>🏆 Generate Leaderboard</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        let warData = [];
+
+        // Select star rating
+        function selectStars(playerIndex, attackNum, stars) {
+            // Update hidden input
+            document.getElementById(`stars${attackNum}-${playerIndex}`).value = stars;
+
+            // Update button styles
+            const buttons = document.querySelectorAll(`#players-container > div:nth-child(${playerIndex + 1}) .attack-section:nth-child(${attackNum}) .star-btn`);
+            buttons.forEach((btn, index) => {
+                if (index === stars) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
+        }
+
+        // Handle file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            document.getElementById('fileName').textContent = `Selected: ${file.name}`;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    warData = data.participants;
+                    displayPlayers();
+                    showStatus('War data loaded successfully! Enter attack results below.', 'success');
+                    
+                    // Enable buttons
+                    document.getElementById('saveBtn').disabled = false;
+                    document.getElementById('leaderboardBtn').disabled = false;
+                } catch (error) {
+                    showStatus('Error reading file. Make sure it is a valid JSON file!', 'error');
+                    console.error(error);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Display players with input fields
+        function displayPlayers() {
+            const container = document.getElementById('players-container');
+            container.innerHTML = '';
+            container.classList.add('loaded');
+
+            warData.forEach((player, index) => {
+                const card = document.createElement('div');
+                card.className = 'player-card';
+                card.innerHTML = `
+                    <div class="player-header">
+                        <div>
+                            <div class="player-name">${player.name}</div>
+                            <div class="player-info">TH${player.townHallLevel} | Position #${player.mapPosition}</div>
+                        </div>
+                    </div>
+                    <div class="attack-inputs">
+                        <div class="attack-section">
+                            <h3>⚔️ Attack 1</h3>
+                            <div class="input-group">
+                                <label>Stars</label>
+                                <div class="star-buttons">
+                                    <button type="button" class="star-btn selected" onclick="selectStars(${index}, 1, 0)">0</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 1)">1⭐</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 2)">2⭐</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 1, 3)">3⭐</button>
+                                </div>
+                                <input type="hidden" id="stars1-${index}" value="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Destruction %</label>
+                                <input type="number" id="percent1-${index}" min="0" max="100" value="0">
+                            </div>
+                        </div>
+                        <div class="attack-section">
+                            <h3>⚔️ Attack 2</h3>
+                            <div class="input-group">
+                                <label>Stars</label>
+                                <div class="star-buttons">
+                                    <button type="button" class="star-btn selected" onclick="selectStars(${index}, 2, 0)">0</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 1)">1⭐</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 2)">2⭐</button>
+                                    <button type="button" class="star-btn" onclick="selectStars(${index}, 2, 3)">3⭐</button>
+                                </div>
+                                <input type="hidden" id="stars2-${index}" value="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Destruction %</label>
+                                <input type="number" id="percent2-${index}" min="0" max="100" value="0">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Save all results
+        function saveAllResults() {
+            if (warData.length === 0) {
+                showStatus('Please load war data first!', 'error');
+                return;
+            }
+
+            const results = warData.map((player, index) => {
+                const stars1 = parseInt(document.getElementById(`stars1-${index}`).value) || 0;
+                const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
+                const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
+                const percent2 = parseInt(document.getElementById(`percent2-${index}`).value) || 0;
+
+                return {
+                    ...player,
+                    attack1: { stars: stars1, percentage: percent1 },
+                    attack2: { stars: stars2, percentage: percent2 },
+                    totalStars: stars1 + stars2,
+                    totalPercentage: percent1 + percent2
+                };
+            });
+
+            // Download as JSON
+            const dataStr = JSON.stringify(results, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'war-results.json';
+            link.click();
+
+            showStatus('Results saved! File downloaded as war-results.json', 'success');
+        }
+
+        // Generate leaderboard
+        function generateLeaderboard() {
+            if (warData.length === 0) {
+                showStatus('Please load war data first!', 'error');
+                return;
+            }
+
+            const results = warData.map((player, index) => {
+                const stars1 = parseInt(document.getElementById(`stars1-${index}`).value) || 0;
+                const percent1 = parseInt(document.getElementById(`percent1-${index}`).value) || 0;
+                const stars2 = parseInt(document.getElementById(`stars2-${index}`).value) || 0;
+                const percent2 = parseInt(document.getElementById(`percent2-${index}`).value) || 0;
+
+                return {
+                    name: player.name,
+                    townHallLevel: player.townHallLevel,
+                    totalStars: stars1 + stars2,
+                    totalPercentage: percent1 + percent2,
+                    attack1: { stars: stars1, percentage: percent1 },
+                    attack2: { stars: stars2, percentage: percent2 }
+                };
+            });
+
+            // Sort by stars, then percentage
+            results.sort((a, b) => {
+                if (b.totalStars !== a.totalStars) {
+                    return b.totalStars - a.totalStars;
+                }
+                return b.totalPercentage - a.totalPercentage;
+            });
+
+            const leaderboardData = {
+                lastUpdated: new Date().toISOString(),
+                players: results
+            };
+
+            // Download leaderboard
+            const dataStr = JSON.stringify(leaderboardData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'leaderboard.json';
+            link.click();
+
+            showStatus('🎉 Leaderboard generated! Upload leaderboard.json to your GitHub repo.', 'success');
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

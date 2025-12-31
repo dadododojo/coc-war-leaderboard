@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans War Leaderboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .last-updated {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .leaderboard {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .player-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 100px 100px 150px;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .player-row:hover {
+            transform: translateX(10px);
+        }
+
+        .rank-1 {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .rank-2 {
+            background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .rank-3 {
+            background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .rank-other {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .rank {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .player-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-name {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .player-th {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .attacks-detail {
+            font-size: 0.9em;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            padding: 50px;
+        }
+
+        .error {
+            background: #f5576c;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .player-row {
+                grid-template-columns: 60px 1fr;
+                gap: 10px;
+            }
+
+            .stat {
+                grid-column: 1 / -1;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 War Leaderboard 🏆</h1>
+            <div class="last-updated" id="lastUpdated">Loading...</div>
+        </header>
+
+        <div class="leaderboard" id="leaderboard">
+            <div class="loading">Loading leaderboard...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadLeaderboard() {
+            try {
+                const response = await fetch('leaderboard.json');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load leaderboard data');
+                }
+
+                const data = await response.json();
+                displayLeaderboard(data);
+            } catch (error) {
+                console.error('Error loading leaderboard:', error);
+                document.getElementById('leaderboard').innerHTML = `
+                    <div class="error">
+                        ❌ Failed to load leaderboard data<br>
+                        <small>Make sure leaderboard.json is in the same directory</small>
+                    </div>
+                `;
+            }
+        }
+
+        function displayLeaderboard(data) {
+            const lastUpdated = new Date(data.lastUpdated).toLocaleString();
+            document.getElementById('lastUpdated').textContent = `Last Updated: ${lastUpdated}`;
+
+            const leaderboardEl = document.getElementById('leaderboard');
+            leaderboardEl.innerHTML = '';
+
+            data.players.forEach((player, index) => {
+                const rank = index + 1;
+                let rankClass = 'rank-other';
+                
+                if (rank === 1) rankClass = 'rank-1';
+                else if (rank === 2) rankClass = 'rank-2';
+                else if (rank === 3) rankClass = 'rank-3';
+
+                const row = document.createElement('div');
+                row.className = `player-row ${rankClass}`;
+                row.style.animationDelay = `${index * 0.1}s`;
+                
+                row.innerHTML = `
+                    <div class="rank">#${rank}</div>
+                    <div class="player-info">
+                        <div class="player-name">${player.name}</div>
+                        <div class="player-th">Town Hall ${player.townHallLevel}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">⭐ ${player.totalStars}</div>
+                        <div class="stat-label">Stars</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${player.totalPercentage}%</div>
+                        <div class="stat-label">Destruction</div>
+                    </div>
+                    <div class="attacks-detail">
+                        <div>Attack 1: ${player.attack1.stars}⭐ ${player.attack1.percentage}%</div>
+                        <div>Attack 2: ${player.attack2.stars}⭐ ${player.attack2.percentage}%</div>
+                    </div>
+                `;
+
+                leaderboardEl.appendChild(row);
+            });
+        }
+
+        // Auto-refresh every 5 minutes
+        function autoRefresh() {
+            loadLeaderboard();
+            setInterval(loadLeaderboard, 5 * 60 * 1000);
+        }
+
+        window.addEventListener('load', autoRefresh);
+    </script>
+</body>
+</html>
