@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f5f7fa;
             min-height: 100vh;
             padding: 20px;
         }
@@ -25,72 +25,129 @@
 
         header {
             text-align: center;
-            color: white;
-            margin-bottom: 40px;
+            color: #2c3e50;
+            margin-bottom: 30px;
             animation: fadeIn 1s ease-in;
         }
 
         header h1 {
             font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 20px;
+        }
+
+        .toggle-btn {
+            padding: 12px 30px;
+            border: 2px solid #3498db;
+            background: white;
+            color: #3498db;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .toggle-btn:last-child {
+            border-radius: 0 8px 8px 0;
+            border-left: none;
+        }
+
+        .toggle-btn:hover {
+            background: #ecf0f1;
+        }
+
+        .toggle-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .war-info {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
         }
 
         .last-updated {
-            font-size: 1em;
-            opacity: 0.9;
+            font-size: 0.9em;
+            color: #95a5a6;
         }
 
         .leaderboard {
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             animation: slideUp 0.8s ease-out;
         }
 
         .player-row {
             display: grid;
-            grid-template-columns: 80px 1fr 100px 100px 150px;
+            grid-template-columns: 80px 1fr 120px 120px 100px 150px;
             gap: 20px;
             align-items: center;
             padding: 20px;
             margin-bottom: 15px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-in;
+            border: 2px solid transparent;
         }
 
         .player-row:hover {
             transform: translateX(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .rank-1 {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: white;
-            font-weight: bold;
+            background: #fff9e6;
+            border-color: #f39c12;
+        }
+
+        .rank-1 .rank {
+            color: #f39c12;
         }
 
         .rank-2 {
-            background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
-            color: white;
-            font-weight: bold;
+            background: #f8f9fa;
+            border-color: #95a5a6;
+        }
+
+        .rank-2 .rank {
+            color: #7f8c8d;
         }
 
         .rank-3 {
-            background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%);
-            color: white;
-            font-weight: bold;
+            background: #fff5e6;
+            border-color: #d68910;
+        }
+
+        .rank-3 .rank {
+            color: #d68910;
         }
 
         .rank-other {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
+            background: #ffffff;
+            border-color: #e1e8ed;
+        }
+
+        .rank-other .rank {
+            color: #34495e;
         }
 
         .rank {
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 700;
             text-align: center;
         }
 
@@ -101,12 +158,13 @@
 
         .player-name {
             font-size: 1.3em;
-            font-weight: bold;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .player-th {
             font-size: 0.9em;
-            opacity: 0.9;
+            color: #7f8c8d;
             margin-top: 5px;
         }
 
@@ -116,31 +174,59 @@
 
         .stat-value {
             font-size: 1.5em;
-            font-weight: bold;
+            font-weight: 700;
+            color: #2c3e50;
         }
 
         .stat-label {
             font-size: 0.8em;
-            opacity: 0.9;
+            color: #7f8c8d;
             margin-top: 5px;
+        }
+
+        .stat-small {
+            font-size: 0.75em;
+            color: #95a5a6;
+            margin-top: 2px;
+        }
+
+        .wars-count {
+            text-align: center;
+            color: #34495e;
+            font-size: 0.9em;
         }
 
         .attacks-detail {
             font-size: 0.9em;
+            color: #34495e;
+        }
+
+        .attacks-detail div {
+            margin-bottom: 4px;
+        }
+
+        .averages {
+            font-size: 0.85em;
+            color: #34495e;
+        }
+
+        .averages div {
+            margin-bottom: 4px;
         }
 
         .loading {
             text-align: center;
-            color: white;
+            color: #7f8c8d;
             font-size: 1.5em;
             padding: 50px;
         }
 
         .error {
-            background: #f5576c;
-            color: white;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             text-align: center;
             font-size: 1.2em;
         }
@@ -171,12 +257,17 @@
                 gap: 10px;
             }
 
-            .stat {
+            .stat, .wars-count, .averages, .attacks-detail {
                 grid-column: 1 / -1;
             }
 
             header h1 {
                 font-size: 2em;
+            }
+
+            .toggle-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -184,7 +275,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>🏆 War Leaderboard 🏆</h1>
+            <h1>🏆 War Leaderboard</h1>
+            
+            <div class="view-toggle">
+                <button class="toggle-btn active" onclick="switchView('current')">Current War</button>
+                <button class="toggle-btn" onclick="switchView('alltime')">All-Time Stats</button>
+            </div>
+
+            <div class="war-info" id="warInfo"></div>
             <div class="last-updated" id="lastUpdated">Loading...</div>
         </header>
 
@@ -194,29 +292,68 @@
     </div>
 
     <script>
-        async function loadLeaderboard() {
+        let currentView = 'current';
+        let currentWarData = null;
+        let alltimeData = null;
+
+        async function loadCurrentWar() {
             try {
                 const response = await fetch('leaderboard.json');
-                
-                if (!response.ok) {
-                    throw new Error('Failed to load leaderboard data');
-                }
-
-                const data = await response.json();
-                displayLeaderboard(data);
+                if (!response.ok) throw new Error('Failed to load current war data');
+                currentWarData = await response.json();
+                return true;
             } catch (error) {
-                console.error('Error loading leaderboard:', error);
-                document.getElementById('leaderboard').innerHTML = `
-                    <div class="error">
-                        ❌ Failed to load leaderboard data<br>
-                        <small>Make sure leaderboard.json is in the same directory</small>
-                    </div>
-                `;
+                console.error('Error loading current war:', error);
+                return false;
             }
         }
 
-        function displayLeaderboard(data) {
+        async function loadAlltimeStats() {
+            try {
+                const response = await fetch('leaderboard-cumulative.json');
+                if (!response.ok) throw new Error('Failed to load all-time data');
+                alltimeData = await response.json();
+                return true;
+            } catch (error) {
+                console.error('Error loading all-time stats:', error);
+                return false;
+            }
+        }
+
+        async function switchView(view) {
+            currentView = view;
+
+            // Update button states
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Load and display appropriate data
+            if (view === 'current') {
+                if (!currentWarData) {
+                    const loaded = await loadCurrentWar();
+                    if (!loaded) {
+                        showError('current');
+                        return;
+                    }
+                }
+                displayCurrentWar(currentWarData);
+            } else {
+                if (!alltimeData) {
+                    const loaded = await loadAlltimeStats();
+                    if (!loaded) {
+                        showError('alltime');
+                        return;
+                    }
+                }
+                displayAlltimeStats(alltimeData);
+            }
+        }
+
+        function displayCurrentWar(data) {
             const lastUpdated = new Date(data.lastUpdated).toLocaleString();
+            document.getElementById('warInfo').textContent = 'Current War Results';
             document.getElementById('lastUpdated').textContent = `Last Updated: ${lastUpdated}`;
 
             const leaderboardEl = document.getElementById('leaderboard');
@@ -233,6 +370,7 @@
                 const row = document.createElement('div');
                 row.className = `player-row ${rankClass}`;
                 row.style.animationDelay = `${index * 0.1}s`;
+                row.style.gridTemplateColumns = '80px 1fr 100px 100px 150px';
                 
                 row.innerHTML = `
                     <div class="rank">#${rank}</div>
@@ -258,13 +396,94 @@
             });
         }
 
-        // Auto-refresh every 5 minutes
-        function autoRefresh() {
-            loadLeaderboard();
-            setInterval(loadLeaderboard, 5 * 60 * 1000);
+        function displayAlltimeStats(data) {
+            const lastUpdated = new Date(data.lastUpdated).toLocaleString();
+            document.getElementById('warInfo').textContent = `All-Time Stats (${data.totalWars} Wars)`;
+            document.getElementById('lastUpdated').textContent = `Last Updated: ${lastUpdated}`;
+
+            const leaderboardEl = document.getElementById('leaderboard');
+            leaderboardEl.innerHTML = '';
+
+            data.players.forEach((player, index) => {
+                const rank = index + 1;
+                let rankClass = 'rank-other';
+                
+                if (rank === 1) rankClass = 'rank-1';
+                else if (rank === 2) rankClass = 'rank-2';
+                else if (rank === 3) rankClass = 'rank-3';
+
+                const row = document.createElement('div');
+                row.className = `player-row ${rankClass}`;
+                row.style.animationDelay = `${index * 0.1}s`;
+                
+                row.innerHTML = `
+                    <div class="rank">#${rank}</div>
+                    <div class="player-info">
+                        <div class="player-name">${player.name}</div>
+                        <div class="player-th">Town Hall ${player.townHallLevel}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">⭐ ${player.totalStars}</div>
+                        <div class="stat-label">Total Stars</div>
+                        <div class="stat-small">Avg: ${player.averageStars}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${player.totalPercentage}%</div>
+                        <div class="stat-label">Total Destruction</div>
+                        <div class="stat-small">Avg: ${player.averagePercentage}%</div>
+                    </div>
+                    <div class="wars-count">
+                        <strong>${player.warsParticipated}</strong><br>
+                        <span style="font-size: 0.85em; color: #7f8c8d;">wars</span>
+                    </div>
+                    <div class="averages">
+                        <div>📊 ${player.averageStars} stars/war</div>
+                        <div>💥 ${player.averagePercentage}% avg</div>
+                    </div>
+                `;
+
+                leaderboardEl.appendChild(row);
+            });
         }
 
-        window.addEventListener('load', autoRefresh);
+        function showError(view) {
+            const leaderboardEl = document.getElementById('leaderboard');
+            const fileName = view === 'current' ? 'leaderboard.json' : 'leaderboard-cumulative.json';
+            leaderboardEl.innerHTML = `
+                <div class="error">
+                    ❌ Failed to load ${view === 'current' ? 'current war' : 'all-time'} data<br>
+                    <small>Make sure ${fileName} is in the same directory</small>
+                </div>
+            `;
+        }
+
+        async function initialize() {
+            // Load current war data by default
+            const loaded = await loadCurrentWar();
+            if (loaded) {
+                displayCurrentWar(currentWarData);
+            } else {
+                showError('current');
+            }
+        }
+
+        // Auto-refresh every 5 minutes
+        function autoRefresh() {
+            if (currentView === 'current') {
+                loadCurrentWar().then(() => {
+                    if (currentWarData) displayCurrentWar(currentWarData);
+                });
+            } else {
+                loadAlltimeStats().then(() => {
+                    if (alltimeData) displayAlltimeStats(alltimeData);
+                });
+            }
+        }
+
+        window.addEventListener('load', () => {
+            initialize();
+            setInterval(autoRefresh, 5 * 60 * 1000);
+        });
     </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f5f7fa;
             min-height: 100vh;
             padding: 20px;
         }
@@ -22,21 +22,22 @@
             max-width: 800px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         h1 {
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 30px;
             text-align: center;
             font-size: 2em;
+            font-weight: 600;
         }
 
         .upload-section {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 15px;
+            background: #3498db;
+            border-radius: 8px;
             padding: 30px;
             margin-bottom: 30px;
             text-align: center;
@@ -45,6 +46,7 @@
 
         .upload-section h2 {
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .file-input-wrapper {
@@ -58,18 +60,18 @@
 
         .file-input-label {
             background: white;
-            color: #4facfe;
+            color: #3498db;
             padding: 15px 40px;
-            border-radius: 10px;
+            border-radius: 6px;
             font-size: 1.1em;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.2s;
             display: inline-block;
         }
 
         .file-input-label:hover {
-            transform: scale(1.05);
+            background: #ecf0f1;
         }
 
         .file-name {
@@ -78,11 +80,11 @@
         }
 
         .player-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 15px;
+            background: #ffffff;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
-            color: white;
         }
 
         .player-header {
@@ -90,16 +92,19 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f5f7fa;
         }
 
         .player-name {
             font-size: 1.3em;
-            font-weight: bold;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .player-info {
             font-size: 0.9em;
-            opacity: 0.9;
+            color: #7f8c8d;
         }
 
         .attack-inputs {
@@ -110,14 +115,17 @@
         }
 
         .attack-section {
-            background: rgba(255,255,255,0.2);
+            background: #f8f9fa;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 6px;
+            border: 1px solid #e1e8ed;
         }
 
         .attack-section h3 {
             margin-bottom: 10px;
             font-size: 1em;
+            color: #34495e;
+            font-weight: 600;
         }
 
         .input-group {
@@ -128,19 +136,23 @@
             display: block;
             margin-bottom: 5px;
             font-size: 0.9em;
+            color: #34495e;
+            font-weight: 500;
         }
 
         .input-group input {
             width: 100%;
             padding: 10px;
-            border: none;
-            border-radius: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
             font-size: 1em;
             background: white;
         }
 
         .input-group input:focus {
-            outline: 3px solid #667eea;
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
         .star-buttons {
@@ -152,26 +164,25 @@
         .star-btn {
             flex: 1;
             padding: 10px;
-            border: 2px solid white;
-            background: rgba(255,255,255,0.3);
-            color: white;
-            border-radius: 8px;
+            border: 2px solid #cbd5e0;
+            background: white;
+            color: #2c3e50;
+            border-radius: 6px;
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .star-btn:hover {
-            background: rgba(255,255,255,0.5);
-            transform: scale(1.05);
+            background: #f8f9fa;
+            border-color: #3498db;
         }
 
         .star-btn.selected {
-            background: white;
-            color: #f5576c;
-            border-color: white;
-            transform: scale(1.1);
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
         }
 
         .actions {
@@ -182,58 +193,60 @@
 
         .action-btn {
             flex: 1;
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            background: #27ae60;
             color: white;
             border: none;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 6px;
             font-size: 1em;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.2s;
         }
 
         .action-btn:hover {
-            transform: scale(1.05);
+            background: #229954;
         }
 
         .action-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-            transform: none;
         }
 
         .status {
             margin-top: 20px;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 6px;
             text-align: center;
             display: none;
         }
 
         .status.success {
-            background: #43e97b;
-            color: white;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
             display: block;
         }
 
         .status.error {
-            background: #f5576c;
-            color: white;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
             display: block;
         }
 
         .instructions {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
         .instructions h3 {
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .instructions ol {
@@ -242,6 +255,15 @@
 
         .instructions li {
             margin-bottom: 5px;
+            color: #34495e;
+        }
+
+        .instructions code {
+            background: #34495e;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
         }
 
         #players-container {
@@ -294,6 +316,11 @@
         function selectStars(playerIndex, attackNum, stars) {
             // Update hidden input
             document.getElementById(`stars${attackNum}-${playerIndex}`).value = stars;
+
+            // If 3 stars selected, auto-fill percentage to 100
+            if (stars === 3) {
+                document.getElementById(`percent${attackNum}-${playerIndex}`).value = 100;
+            }
 
             // Update button styles
             const buttons = document.querySelectorAll(`#players-container > div:nth-child(${playerIndex + 1}) .attack-section:nth-child(${attackNum}) .star-btn`);

@@ -6,15 +6,15 @@
     "mapPosition": 22,
     "attacks": [],
     "attack1": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
     "attack2": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
-    "totalStars": 0,
-    "totalPercentage": 0
+    "totalStars": 6,
+    "totalPercentage": 200
   },
   {
     "tag": "#PUUV8V08V",
@@ -40,15 +40,15 @@
       }
     ],
     "attack1": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
     "attack2": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
-    "totalStars": 0,
-    "totalPercentage": 0
+    "totalStars": 6,
+    "totalPercentage": 200
   },
   {
     "tag": "#8G8VV89JJ",
@@ -74,15 +74,15 @@
       }
     ],
     "attack1": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
     "attack2": {
-      "stars": 0,
-      "percentage": 0
+      "stars": 3,
+      "percentage": 100
     },
-    "totalStars": 0,
-    "totalPercentage": 0
+    "totalStars": 6,
+    "totalPercentage": 200
   },
   {
     "tag": "#99QUJCCYJ",
@@ -109,14 +109,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#Q9UPUUGRL",
@@ -143,14 +143,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#2VRP9CJY",
@@ -177,14 +177,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#9GCJRCR8V",
@@ -211,14 +211,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#8R8R0GL9",
@@ -245,14 +245,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#2822UV20V",
@@ -279,14 +279,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#88YGRQJJP",
@@ -313,14 +313,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#VQUQ8992",
@@ -347,14 +347,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#G2PQRR0QV",
@@ -381,14 +381,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#2LVYUPJ9Q",
@@ -415,14 +415,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#8G89CPJVU",
@@ -449,14 +449,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#P8Y9JR8CP",
@@ -483,14 +483,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#8VC29JPJP",
@@ -517,14 +517,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#8Y9J09LQ8",
@@ -551,14 +551,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#YQ8V829CQ",
@@ -585,14 +585,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#GV90C0LU",
@@ -619,14 +619,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#JQV99PU8",
@@ -653,14 +653,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#LYGLRCQCR",
@@ -687,14 +687,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#2GLUU0YCU",
@@ -721,14 +721,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#PRR2RJJ9U",
@@ -755,14 +755,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#LY9GC9LJQ",
@@ -772,14 +772,14 @@
     "attacks": [],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#9PVL282R8",
@@ -806,14 +806,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#LGRPR89PG",
@@ -840,14 +840,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#2Q908JL8C",
@@ -874,14 +874,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#LGRPC9CYG",
@@ -908,14 +908,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#8PCGPU8Q",
@@ -942,14 +942,14 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   },
   {
     "tag": "#PU8L9PVJQ",
@@ -976,13 +976,13 @@
     ],
     "attack1": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "attack2": {
       "stars": 0,
-      "percentage": 0
+      "percentage": 100
     },
     "totalStars": 0,
-    "totalPercentage": 0
+    "totalPercentage": 200
   }
 ]
