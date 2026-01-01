@@ -14,7 +14,8 @@ async function loadCumulativeStats() {
         return {
             players: {},
             totalWars: 0,
-            lastUpdated: null
+            lastUpdated: null,
+            lastWarHash: null
         };
     }
 }
@@ -132,13 +133,33 @@ async function main() {
             return;
         }
 
+        // Check if this is a CWL war (exclude from cumulative)
+        const isCWL = currentWarData.players.some(p => 
+            (p.attack2.stars === 0 && p.attack2.percentage === 0 && !p.attack2.isLoot && !p.attack2.missed)
+        );
+
+        if (isCWL) {
+            console.log('🏆 CWL war detected - SKIPPING cumulative update');
+            console.log('ℹ️  CWL wars are not included in cumulative stats');
+            return;
+        }
+
         // Load cumulative stats
         const cumulativeStats = await loadCumulativeStats();
         console.log(`📁 Loaded stats for ${Object.keys(cumulativeStats.players).length} players`);
         console.log(`📈 Total wars tracked: ${cumulativeStats.totalWars}`);
 
+        // Check if this war was already processed
+        const warHash = currentWarData.lastUpdated;
+        if (cumulativeStats.lastWarHash === warHash) {
+            console.log('⚠️  This war has already been processed!');
+            console.log('💡 Skipping to avoid duplicate counting');
+            return;
+        }
+
         // Update with new war data
         const updatedStats = updateCumulativeStats(cumulativeStats, currentWarData);
+        updatedStats.lastWarHash = warHash; // Track this war
         
         // Save updated cumulative stats
         await saveCumulativeStats(updatedStats);
@@ -152,7 +173,7 @@ async function main() {
         // Show top 5 players
         console.log('\n🏆 Top 5 Players (All-Time):');
         cumulativeLeaderboard.players.slice(0, 5).forEach((player, index) => {
-            console.log(`${index + 1}. ${player.name} - ${player.totalStars}⭐ (${player.warsParticipated} wars)`);
+            console.log(`${index + 1}. ${player.name} (${player.tag}) - ${player.totalStars}⭐ (${player.warsParticipated} wars)`);
         });
 
         console.log('\n💡 Files created:');

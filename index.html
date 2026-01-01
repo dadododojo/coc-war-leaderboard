@@ -288,12 +288,7 @@
         <header>
             <h1>🏆 War Leaderboard</h1>
             
-            <div class="view-toggle">
-                <button class="toggle-btn" onclick="switchView('current')">Current War</button>
-                <button class="toggle-btn active" onclick="switchView('alltime')">All-Time Stats</button>
-            </div>
-
-            <div id="timeFilter" style="display: none; justify-content: center; gap: 0; margin-bottom: 15px;">
+            <div id="timeFilter" style="display: flex; justify-content: center; gap: 0; margin-bottom: 15px;">
                 <button class="toggle-btn active" onclick="filterTime('alltime')" id="filter-alltime">All Time</button>
                 <button class="toggle-btn" onclick="filterTime('week')" id="filter-week">Last Week</button>
                 <button class="toggle-btn" onclick="filterTime('month')" id="filter-month">Last Month</button>
@@ -310,22 +305,8 @@
     </div>
 
     <script>
-        let currentView = 'alltime'; // Changed default to alltime
         let currentTimeFilter = 'alltime';
-        let currentWarData = null;
         let alltimeData = null;
-
-        async function loadCurrentWar() {
-            try {
-                const response = await fetch('leaderboard.json');
-                if (!response.ok) throw new Error('Failed to load current war data');
-                currentWarData = await response.json();
-                return true;
-            } catch (error) {
-                console.error('Error loading current war:', error);
-                return false;
-            }
-        }
 
         async function loadAlltimeStats() {
             try {
@@ -336,45 +317,6 @@
             } catch (error) {
                 console.error('Error loading all-time stats:', error);
                 return false;
-            }
-        }
-
-        async function switchView(view) {
-            currentView = view;
-
-            // Update button states
-            document.querySelectorAll('.view-toggle .toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Show/hide time filter
-            const timeFilter = document.getElementById('timeFilter');
-            if (view === 'alltime') {
-                timeFilter.style.display = 'flex';
-            } else {
-                timeFilter.style.display = 'none';
-            }
-
-            // Load and display appropriate data
-            if (view === 'current') {
-                if (!currentWarData) {
-                    const loaded = await loadCurrentWar();
-                    if (!loaded) {
-                        showError('current');
-                        return;
-                    }
-                }
-                displayCurrentWar(currentWarData);
-            } else {
-                if (!alltimeData) {
-                    const loaded = await loadAlltimeStats();
-                    if (!loaded) {
-                        showError('alltime');
-                        return;
-                    }
-                }
-                displayAlltimeStats(alltimeData, currentTimeFilter);
             }
         }
 
