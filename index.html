@@ -465,19 +465,19 @@
                         <div class="player-th">TH${player.townHallLevel}</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value" style="font-size: 1.3em; color: #27ae60;">💯 ${player.threeStarRate}%</div>
+                        <div class="stat-value" style="font-size: 1.3em; color: #27ae60;">💯 ${player.threeStarRate || 0}%</div>
                         <div class="stat-label">3⭐ Rate</div>
-                        <div class="stat-small">${player.threeStarAttacks}/${player.totalAttacks}</div>
+                        <div class="stat-small">${player.threeStarAttacks || 0}/${player.totalAttacks || 0}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">⭐ ${player.totalStars}</div>
                         <div class="stat-label">Total Stars</div>
-                        <div class="stat-small">Avg: ${player.averageStars}</div>
+                        <div class="stat-small">Avg: ${player.averageStarsPerAttack || '0.00'}/atk</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">${player.totalPercentage}%</div>
                         <div class="stat-label">Destruction</div>
-                        <div class="stat-small">Avg: ${player.averagePercentage}%</div>
+                        <div class="stat-small">Avg: ${player.averagePercentagePerAttack || '0.0'}%/atk</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value ${player.totalMissedAttacks > 0 ? 'missed-indicator' : ''}">${player.totalMissedAttacks || 0}</div>

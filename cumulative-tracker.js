@@ -85,16 +85,29 @@ function generateCumulativeLeaderboard(cumulativeStats) {
     // Convert players object to array and calculate stats
     const playersArray = Object.values(cumulativeStats.players).map(player => {
         const totalAttacks = player.warsParticipated * 2; // 2 attacks per war
-        const threeStarAttacks = player.attackHistory.reduce((count, war) => {
-            // Count 3-star attacks from history
-            // This is approximate - we're counting if total stars / 2 >= 3
-            const attacksInWar = 2;
-            const avgStarsPerAttack = war.stars / attacksInWar;
-            // Rough estimate: if avg >= 2.5, likely has 3-stars
-            return count + (war.stars >= 5 ? 2 : war.stars >= 3 ? 1 : 0);
-        }, 0);
         
-        const threeStarRate = totalAttacks > 0 ? ((threeStarAttacks / totalAttacks) * 100).toFixed(1) : 0;
+        // Calculate 3-star attacks from attack history
+        let threeStarAttacks = 0;
+        player.attackHistory.forEach(war => {
+            // Check each attack in the war
+            // If player got 6 stars in a war, both attacks were 3-stars
+            if (war.stars === 6) {
+                threeStarAttacks += 2;
+            } else if (war.stars >= 3) {
+                // At least one 3-star attack
+                // If 5 stars total, one was 3-star and one was 2-star
+                // If 4 stars total, one was 3-star and one was 1-star
+                // If 3 stars total, one was 3-star and one was 0-star
+                threeStarAttacks += 1;
+            }
+            // If less than 3 stars total, no 3-star attacks
+        });
+        
+        const threeStarRate = totalAttacks > 0 ? ((threeStarAttacks / totalAttacks) * 100).toFixed(1) : '0.0';
+        
+        // Calculate averages per attack (divide by 2)
+        const averageStarsPerAttack = totalAttacks > 0 ? (player.totalStars / totalAttacks).toFixed(2) : '0.00';
+        const averagePercentagePerAttack = totalAttacks > 0 ? (player.totalPercentage / totalAttacks).toFixed(1) : '0.0';
         
         return {
             tag: player.tag,
@@ -107,8 +120,8 @@ function generateCumulativeLeaderboard(cumulativeStats) {
             threeStarRate: parseFloat(threeStarRate),
             threeStarAttacks: threeStarAttacks,
             totalAttacks: totalAttacks,
-            averageStars: (player.totalStars / player.warsParticipated).toFixed(2),
-            averagePercentage: (player.totalPercentage / player.warsParticipated).toFixed(1)
+            averageStarsPerAttack: averageStarsPerAttack,
+            averagePercentagePerAttack: averagePercentagePerAttack
         };
     });
 
