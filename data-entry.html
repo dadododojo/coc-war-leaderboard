@@ -439,7 +439,7 @@ let warData = [];
                     <div class="player-header">
                         <div>
                             <div class="player-name">${player.name}</div>
-                            <div class="player-info">TH${player.townHallLevel} | Position #${player.mapPosition}</div>
+                            <div class="player-info">TH${player.townHallLevel} | Position #${player.mapPosition} | <span style="font-size: 0.8em; color: #95a5a6;">${player.tag}</span></div>
                         </div>
                     </div>
                     <div class="attack-inputs" style="grid-template-columns: ${showAttack2 ? 'repeat(2, 1fr)' : '1fr'};">
@@ -572,6 +572,7 @@ let warData = [];
                 const countedPercent2 = isLoot2 ? 0 : percent2;
 
                 return {
+                    tag: player.tag,
                     name: player.name,
                     townHallLevel: player.townHallLevel,
                     totalStars: countedStars1 + countedStars2,

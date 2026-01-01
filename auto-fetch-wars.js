@@ -167,7 +167,7 @@ async function checkForCompletedWar() {
 // Start the auto-fetcher
 console.log('🤖 Auto War Data Fetcher Started!');
 console.log('====================================');
-console.log(`📡 Checking every ${CONFIG.CHECK_INTERVAL / 1000 / 60} minutes`);
+console.log(`📡 Checking every ${CONFIG.CHECK_INTERVAL / 1000 / 60 / 60} hours`);
 console.log(`🏰 Clan: ${CONFIG.CLAN_TAG}`);
 console.log('====================================\n');
 

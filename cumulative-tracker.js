@@ -38,11 +38,13 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
 
     // Process each player from current war
     currentWarData.players.forEach(player => {
+        const playerTag = player.tag; // Use tag instead of name as unique ID
         const playerName = player.name;
 
         // Initialize player if doesn't exist
-        if (!cumulativeStats.players[playerName]) {
-            cumulativeStats.players[playerName] = {
+        if (!cumulativeStats.players[playerTag]) {
+            cumulativeStats.players[playerTag] = {
+                tag: playerTag,
                 name: playerName,
                 townHallLevel: player.townHallLevel,
                 totalStars: 0,
@@ -55,7 +57,8 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
         }
 
         // Update player stats
-        const playerStats = cumulativeStats.players[playerName];
+        const playerStats = cumulativeStats.players[playerTag];
+        playerStats.name = playerName; // Update name in case it changed
         playerStats.townHallLevel = player.townHallLevel; // Update TH level in case it changed
         playerStats.totalStars += player.totalStars;
         playerStats.totalPercentage += player.totalPercentage;
@@ -80,6 +83,7 @@ function updateCumulativeStats(cumulativeStats, currentWarData) {
 function generateCumulativeLeaderboard(cumulativeStats) {
     // Convert players object to array and calculate averages
     const playersArray = Object.values(cumulativeStats.players).map(player => ({
+        tag: player.tag,
         name: player.name,
         townHallLevel: player.townHallLevel,
         totalStars: player.totalStars,

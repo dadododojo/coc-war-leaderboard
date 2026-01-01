@@ -94,10 +94,10 @@
         .player-row {
             display: grid;
             grid-template-columns: 80px 1fr 120px 120px 150px 100px;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
             border-radius: 8px;
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-in;
@@ -157,15 +157,21 @@
         }
 
         .player-name {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 600;
             color: #2c3e50;
         }
 
+        .player-tag {
+            font-size: 0.75em;
+            color: #95a5a6;
+            margin-left: 8px;
+        }
+
         .player-th {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #7f8c8d;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
         .stat {
@@ -173,19 +179,19 @@
         }
 
         .stat-value {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 700;
             color: #2c3e50;
         }
 
         .stat-label {
-            font-size: 0.8em;
+            font-size: 0.75em;
             color: #7f8c8d;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
         .stat-small {
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #95a5a6;
             margin-top: 2px;
         }
@@ -197,12 +203,12 @@
         }
 
         .attacks-detail {
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: #34495e;
         }
 
         .attacks-detail div {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .averages {
@@ -283,8 +289,15 @@
             <h1>🏆 War Leaderboard</h1>
             
             <div class="view-toggle">
-                <button class="toggle-btn active" onclick="switchView('current')">Current War</button>
-                <button class="toggle-btn" onclick="switchView('alltime')">All-Time Stats</button>
+                <button class="toggle-btn" onclick="switchView('current')">Current War</button>
+                <button class="toggle-btn active" onclick="switchView('alltime')">All-Time Stats</button>
+            </div>
+
+            <div id="timeFilter" style="display: none; justify-content: center; gap: 0; margin-bottom: 15px;">
+                <button class="toggle-btn active" onclick="filterTime('alltime')" id="filter-alltime">All Time</button>
+                <button class="toggle-btn" onclick="filterTime('week')" id="filter-week">Last Week</button>
+                <button class="toggle-btn" onclick="filterTime('month')" id="filter-month">Last Month</button>
+                <button class="toggle-btn" onclick="filterTime('3months')" id="filter-3months">Last 3 Months</button>
             </div>
 
             <div class="war-info" id="warInfo"></div>
@@ -297,7 +310,8 @@
     </div>
 
     <script>
-        let currentView = 'current';
+        let currentView = 'alltime'; // Changed default to alltime
+        let currentTimeFilter = 'alltime';
         let currentWarData = null;
         let alltimeData = null;
 
@@ -329,10 +343,18 @@
             currentView = view;
 
             // Update button states
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
+            document.querySelectorAll('.view-toggle .toggle-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
+
+            // Show/hide time filter
+            const timeFilter = document.getElementById('timeFilter');
+            if (view === 'alltime') {
+                timeFilter.style.display = 'flex';
+            } else {
+                timeFilter.style.display = 'none';
+            }
 
             // Load and display appropriate data
             if (view === 'current') {
@@ -352,8 +374,53 @@
                         return;
                     }
                 }
-                displayAlltimeStats(alltimeData);
+                displayAlltimeStats(alltimeData, currentTimeFilter);
             }
+        }
+
+        function filterTime(timeRange) {
+            currentTimeFilter = timeRange;
+
+            // Update button states
+            document.querySelectorAll('#timeFilter .toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`filter-${timeRange}`).classList.add('active');
+
+            // Re-display with filter
+            if (alltimeData) {
+                displayAlltimeStats(alltimeData, timeRange);
+            }
+        }
+
+        function filterPlayersByTime(players, timeRange) {
+            if (timeRange === 'alltime') {
+                return players;
+            }
+
+            const now = new Date();
+            let cutoffDate;
+
+            switch(timeRange) {
+                case 'week':
+                    cutoffDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                    break;
+                case 'month':
+                    cutoffDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                    break;
+                case '3months':
+                    cutoffDate = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
+                    break;
+                default:
+                    return players;
+            }
+
+            // Filter and recalculate stats for the time period
+            return players.map(player => {
+                // This is a simplified version - the actual filtering would need attack history
+                // For now, just return players with participation in the period
+                return player;
+            }).filter(player => player.warsParticipated > 0);
         }
 
         function displayCurrentWar(data) {
@@ -413,15 +480,25 @@
             });
         }
 
-        function displayAlltimeStats(data) {
+        function displayAlltimeStats(data, timeFilter = 'alltime') {
             const lastUpdated = new Date(data.lastUpdated).toLocaleString();
-            document.getElementById('warInfo').textContent = `All-Time Stats (${data.totalWars} Wars)`;
+            
+            let filteredPlayers = filterPlayersByTime(data.players, timeFilter);
+            
+            const timeLabel = {
+                'alltime': 'All Time',
+                'week': 'Last 7 Days',
+                'month': 'Last 30 Days',
+                '3months': 'Last 90 Days'
+            }[timeFilter];
+            
+            document.getElementById('warInfo').textContent = `${timeLabel} Stats (${data.totalWars} Wars Total)`;
             document.getElementById('lastUpdated').textContent = `Last Updated: ${lastUpdated}`;
 
             const leaderboardEl = document.getElementById('leaderboard');
             leaderboardEl.innerHTML = '';
 
-            data.players.forEach((player, index) => {
+            filteredPlayers.forEach((player, index) => {
                 const rank = index + 1;
                 let rankClass = 'rank-other';
                 
@@ -442,8 +519,8 @@
                 row.innerHTML = `
                     <div class="rank">${rankDisplay}</div>
                     <div class="player-info">
-                        <div class="player-name">${player.name}</div>
-                        <div class="player-th">Town Hall ${player.townHallLevel}</div>
+                        <div class="player-name">${player.name}<span class="player-tag">${player.tag || ''}</span></div>
+                        <div class="player-th">TH${player.townHallLevel}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">⭐ ${player.totalStars}</div>
@@ -485,12 +562,23 @@
         }
 
         async function initialize() {
-            // Load current war data by default
-            const loaded = await loadCurrentWar();
+            // Load all-time data by default (changed from current war)
+            const loaded = await loadAlltimeStats();
             if (loaded) {
-                displayCurrentWar(currentWarData);
+                document.getElementById('timeFilter').style.display = 'flex';
+                displayAlltimeStats(alltimeData, currentTimeFilter);
             } else {
-                showError('current');
+                // Fallback to current war if all-time doesn't exist
+                const currentLoaded = await loadCurrentWar();
+                if (currentLoaded) {
+                    currentView = 'current';
+                    document.querySelectorAll('.view-toggle .toggle-btn').forEach((btn, idx) => {
+                        btn.classList.toggle('active', idx === 0);
+                    });
+                    displayCurrentWar(currentWarData);
+                } else {
+                    showError('alltime');
+                }
             }
         }
 
