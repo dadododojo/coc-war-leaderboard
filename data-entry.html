@@ -1,32 +1,4 @@
-let warData = [];
-
-        // Try to auto-load war-data.json (works when using a web server)
-        async function autoLoadWarData() {
-            try {
-                const response = await fetch('war-data.json');
-                if (!response.ok) throw new Error('File not found');
-                
-                const data = await response.json();
-                warData = data.participants;
-                displayPlayers();
-                showStatus('War data loaded automatically! ✨', 'success');
-                
-                // Enable buttons
-                document.getElementById('saveBtn').disabled = false;
-                document.getElementById('leaderboardBtn').disabled = false;
-                
-                // Hide upload section since data is already loaded
-                document.querySelector('.upload-section').style.display = 'none';
-                
-                return true;
-            } catch (error) {
-                // Auto-load failed, user will need to upload manually
-                console.log('Auto-load not available. Please upload file manually.');
-                return false;
-            }
-        }
-
-        // Select star rating<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
