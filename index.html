@@ -93,11 +93,11 @@
 
         .player-row {
             display: grid;
-            grid-template-columns: 80px 1fr 120px 120px 150px 100px;
-            gap: 15px;
+            grid-template-columns: 60px 1fr 100px 100px 100px 120px 80px;
+            gap: 12px;
             align-items: center;
-            padding: 12px 15px;
-            margin-bottom: 10px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
             border-radius: 8px;
             transition: all 0.3s ease;
             animation: fadeIn 0.5s ease-in;
@@ -146,7 +146,7 @@
         }
 
         .rank {
-            font-size: 2em;
+            font-size: 1.5em;
             font-weight: 700;
             text-align: center;
         }
@@ -157,21 +157,21 @@
         }
 
         .player-name {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             color: #2c3e50;
         }
 
         .player-tag {
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #95a5a6;
-            margin-left: 8px;
+            margin-left: 6px;
         }
 
         .player-th {
-            font-size: 0.85em;
+            font-size: 0.75em;
             color: #7f8c8d;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .stat {
@@ -179,45 +179,45 @@
         }
 
         .stat-value {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 700;
             color: #2c3e50;
         }
 
         .stat-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #7f8c8d;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .stat-small {
-            font-size: 0.7em;
+            font-size: 0.65em;
             color: #95a5a6;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         .wars-count {
             text-align: center;
             color: #34495e;
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
 
         .attacks-detail {
-            font-size: 0.8em;
+            font-size: 0.7em;
             color: #34495e;
         }
 
         .attacks-detail div {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .averages {
-            font-size: 0.85em;
+            font-size: 0.75em;
             color: #34495e;
         }
 
         .averages div {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .loading {
@@ -454,9 +454,9 @@
                 
                 // Add medal emoji for top 3
                 let rankDisplay = `#${rank}`;
-                if (rank === 1) rankDisplay = '🥇 #1';
-                else if (rank === 2) rankDisplay = '🥈 #2';
-                else if (rank === 3) rankDisplay = '🥉 #3';
+                if (rank === 1) rankDisplay = '🥇';
+                else if (rank === 2) rankDisplay = '🥈';
+                else if (rank === 3) rankDisplay = '🥉';
                 
                 row.innerHTML = `
                     <div class="rank">${rankDisplay}</div>
@@ -465,26 +465,27 @@
                         <div class="player-th">TH${player.townHallLevel}</div>
                     </div>
                     <div class="stat">
+                        <div class="stat-value" style="font-size: 1.3em; color: #27ae60;">💯 ${player.threeStarRate}%</div>
+                        <div class="stat-label">3⭐ Rate</div>
+                        <div class="stat-small">${player.threeStarAttacks}/${player.totalAttacks}</div>
+                    </div>
+                    <div class="stat">
                         <div class="stat-value">⭐ ${player.totalStars}</div>
                         <div class="stat-label">Total Stars</div>
                         <div class="stat-small">Avg: ${player.averageStars}</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">${player.totalPercentage}%</div>
-                        <div class="stat-label">Total Destruction</div>
+                        <div class="stat-label">Destruction</div>
                         <div class="stat-small">Avg: ${player.averagePercentage}%</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value ${player.totalMissedAttacks > 0 ? 'missed-indicator' : ''}">${player.totalMissedAttacks || 0}</div>
-                        <div class="stat-label">Total Missed</div>
+                        <div class="stat-label">Missed</div>
                     </div>
                     <div class="wars-count">
                         <strong>${player.warsParticipated}</strong><br>
                         <span style="font-size: 0.85em; color: #7f8c8d;">wars</span>
-                    </div>
-                    <div class="averages">
-                        <div>📊 ${player.averageStars} stars/war</div>
-                        <div>💥 ${player.averagePercentage}% avg</div>
                     </div>
                 `;
 
