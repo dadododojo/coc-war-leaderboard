@@ -5,6 +5,8 @@ const fs = require('fs').promises;
 const CONFIG = {
     API_KEY: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjBiNDNhNDRjLWYyNGQtNDY5OC05MzQzLWQ2ZGJhZTUxZmNjOSIsImlhdCI6MTc2NzE1MDgwNiwic3ViIjoiZGV2ZWxvcGVyLzE5OGMyYzM1LWI5ZjEtM2EyNy00MmRhLWE1ODJiNjQ3NjdlMiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEzOC4xOTkuMzMuMjQ0IiwiMTE1LjcwLjUwLjYyIl0sInR5cGUiOiJjbGllbnQifV19.8VhqoEY3UwFhFvQqDlYGShooQM_dKYHpdJZNfuhZ4klhbp5vyqk7fCdtfVyRSlkFwGmxhDAFBOkwfG0IlcblWQ', // Get from https://developer.clashofclans.com
     CLAN_TAG: '#LYJV220Y', // Your clan tag (with the #)
+    CHECK_INTERVAL: 24 * 60 * 60 * 1000, // 24 hours
+    RATE_LIMIT_DELAY: 5000, // 5 second delay between API calls
 };
 
 // Format clan tag for URL (replace # with %23)
@@ -17,6 +19,8 @@ async function fetchCurrentWar() {
     const url = `https://api.clashofclans.com/v1/clans/${formatClanTag(CONFIG.CLAN_TAG)}/currentwar`;
     
     try {
+        console.log(`🌐 Making API call to Clash of Clans...`);
+        
         const response = await fetch(url, {
             headers: {
                 'Authorization': `Bearer ${CONFIG.API_KEY}`,
@@ -25,10 +29,19 @@ async function fetchCurrentWar() {
         });
 
         if (!response.ok) {
+            if (response.status === 429) {
+                console.error('❌ Rate limited by API! Waiting longer before next check...');
+                throw new Error('Rate limit exceeded');
+            }
             throw new Error(`API Error: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
+        console.log(`✅ API call successful`);
+        
+        // Add delay after successful call
+        await new Promise(resolve => setTimeout(resolve, CONFIG.RATE_LIMIT_DELAY));
+        
         return data;
     } catch (error) {
         console.error('Error fetching war data:', error.message);
@@ -169,13 +182,20 @@ console.log('🤖 Auto War Data Fetcher Started!');
 console.log('====================================');
 console.log(`📡 Checking every ${CONFIG.CHECK_INTERVAL / 1000 / 60 / 60} hours`);
 console.log(`🏰 Clan: ${CONFIG.CLAN_TAG}`);
+console.log(`⏰ Next check: ${new Date(Date.now() + CONFIG.CHECK_INTERVAL).toLocaleString()}`);
 console.log('====================================\n');
 
-// Run immediately
+console.log('⚠️  IMPORTANT: This script should only run ONCE');
+console.log('⚠️  Running multiple instances will hit API rate limits!\n');
+
+// Run immediately on start
 checkForCompletedWar();
 
 // Then run on interval
-const intervalId = setInterval(checkForCompletedWar, CONFIG.CHECK_INTERVAL);
+const intervalId = setInterval(() => {
+    console.log(`\n⏰ Next check scheduled for: ${new Date(Date.now() + CONFIG.CHECK_INTERVAL).toLocaleString()}`);
+    checkForCompletedWar();
+}, CONFIG.CHECK_INTERVAL);
 
 // Handle graceful shutdown
 process.on('SIGINT', () => {
