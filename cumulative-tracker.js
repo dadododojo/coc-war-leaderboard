@@ -88,24 +88,24 @@ function generateCumulativeLeaderboard(cumulativeStats) {
         
         // Calculate 3-star attacks from attack history
         let threeStarAttacks = 0;
-        player.attackHistory.forEach(war => {
-            // Check each attack in the war
-            // If player got 6 stars in a war, both attacks were 3-stars
-            if (war.stars === 6) {
-                threeStarAttacks += 2;
-            } else if (war.stars >= 3) {
-                // At least one 3-star attack
-                // If 5 stars total, one was 3-star and one was 2-star
-                // If 4 stars total, one was 3-star and one was 1-star
-                // If 3 stars total, one was 3-star and one was 0-star
-                threeStarAttacks += 1;
-            }
-            // If less than 3 stars total, no 3-star attacks
-        });
         
-        const threeStarRate = totalAttacks > 0 ? ((threeStarAttacks / totalAttacks) * 100).toFixed(1) : '0.0';
+        if (player.attackHistory && player.attackHistory.length > 0) {
+            player.attackHistory.forEach(war => {
+                // Check each attack in the war
+                // If player got 6 stars in a war, both attacks were 3-stars
+                if (war.stars === 6) {
+                    threeStarAttacks += 2;
+                } else if (war.stars >= 3) {
+                    // At least one 3-star attack
+                    threeStarAttacks += 1;
+                }
+                // If less than 3 stars total, no 3-star attacks
+            });
+        }
         
-        // Calculate averages per attack (divide by 2)
+        const threeStarRate = totalAttacks > 0 ? parseFloat(((threeStarAttacks / totalAttacks) * 100).toFixed(1)) : 0;
+        
+        // Calculate averages per attack (divide by total attacks)
         const averageStarsPerAttack = totalAttacks > 0 ? (player.totalStars / totalAttacks).toFixed(2) : '0.00';
         const averagePercentagePerAttack = totalAttacks > 0 ? (player.totalPercentage / totalAttacks).toFixed(1) : '0.0';
         
@@ -117,7 +117,7 @@ function generateCumulativeLeaderboard(cumulativeStats) {
             totalPercentage: player.totalPercentage,
             totalMissedAttacks: player.totalMissedAttacks || 0,
             warsParticipated: player.warsParticipated,
-            threeStarRate: parseFloat(threeStarRate),
+            threeStarRate: threeStarRate,
             threeStarAttacks: threeStarAttacks,
             totalAttacks: totalAttacks,
             averageStarsPerAttack: averageStarsPerAttack,
@@ -206,7 +206,9 @@ async function main() {
         // Show top 5 players
         console.log('\n🏆 Top 5 Players (All-Time):');
         cumulativeLeaderboard.players.slice(0, 5).forEach((player, index) => {
-            console.log(`${index + 1}. ${player.name} (${player.tag}) - ${player.totalStars}⭐ (${player.warsParticipated} wars)`);
+            console.log(`${index + 1}. ${player.name} (${player.tag})`);
+            console.log(`   3⭐ Rate: ${player.threeStarRate}% (${player.threeStarAttacks}/${player.totalAttacks} attacks)`);
+            console.log(`   Total: ${player.totalStars}⭐ | ${player.warsParticipated} wars`);
         });
 
         console.log('\n💡 Files created:');
