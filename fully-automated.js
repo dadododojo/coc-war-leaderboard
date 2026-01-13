@@ -11,6 +11,16 @@ const CONFIG = {
     AUTO_GENERATE_LEADERBOARD: true, // Set to false if you want manual control
 };
 
+// Generate times for every 30 minutes in a day
+function generateHalfHourTimes() {
+    const times = [];
+    for (let hour = 0; hour < 24; hour++) {
+        times.push(`${hour.toString().padStart(2, '0')}:00`);
+        times.push(`${hour.toString().padStart(2, '0')}:30`);
+    }
+    return times;
+}
+
 // Format clan tag for URL
 function formatClanTag(tag) {
     return encodeURIComponent(tag);
@@ -179,20 +189,25 @@ async function pushToGitHub() {
         console.log('🚀 Pushing to GitHub...');
         
         const filesToAdd = [];
-        if (await fileExists('war-data.json')) filesToAdd.push('war-data.json');
-        if (await fileExists('leaderboard.json')) filesToAdd.push('leaderboard.json');
-        if (await fileExists('leaderboard-cumulative.json')) filesToAdd.push('leaderboard-cumulative.json');
-        if (await fileExists('cumulative-stats.json')) filesToAdd.push('cumulative-stats.json');
+        
+        // Only add files that exist and aren't ignored
+        const files = ['leaderboard.json', 'leaderboard-cumulative.json'];
+        
+        for (const file of files) {
+            if (await fileExists(file)) {
+                filesToAdd.push(file);
+            }
+        }
         
         if (filesToAdd.length === 0) {
             console.log('⚠️  No files to push');
             return;
         }
         
-        execSync(`git add ${filesToAdd.join(' ')}`, { stdio: 'inherit' });
+        execSync(`git add ${filesToAdd.join(' ')}`, { stdio: 'pipe' });
         
         const timestamp = new Date().toLocaleString();
-        execSync(`git commit -m "Auto-update: ${timestamp}"`, { stdio: 'inherit' });
+        execSync(`git commit -m "Auto-update: ${timestamp}"`, { stdio: 'pipe' });
         
         execSync('git push', { stdio: 'inherit' });
         
@@ -265,6 +280,15 @@ async function performFullAutomation() {
             return;
         }
 
+        // NEW: Only process if war has ENDED
+        if (warData.state !== 'warEnded') {
+            console.log(`ℹ️  War is in progress (${warData.state})`);
+            console.log('💡 Waiting for war to end before processing stats');
+            console.log(`   War ends: ${new Date(warData.endTime).toLocaleString()}\n`);
+            return;
+        }
+
+        console.log(`✅ War has ENDED - safe to process!`);
         console.log(`📊 War State: ${warData.state}`);
         const participants = extractParticipants(warData);
         console.log(`👥 Found ${participants.length} participants\n`);
@@ -317,19 +341,28 @@ function msUntilTime(timeString) {
 }
 
 // Schedule fetches at specific times
-function scheduleAutomation() {
-    console.log('🤖 FULLY AUTOMATED WAR TRACKER');
-    console.log('════════════════════════════════════════');
-    console.log(`🏰 Clan: ${CONFIG.CLAN_TAG}`);
-    console.log(`🔄 Auto-generate: ${CONFIG.AUTO_GENERATE_LEADERBOARD ? 'ENABLED' : 'DISABLED'}`);
-    console.log('════════════════════════════════════════\n');
+function scheduleTimedFetches() {
+    console.log('🕐 Scheduling fetches every 30 minutes:');
+    console.log(`   Total fetch times: ${CONFIG.FETCH_TIMES.length} per day\n`);
     
-    console.log('🕐 Scheduled automation times:');
+    // Show next 5 fetch times
+    console.log('   Next 5 fetch times:');
+    const now = new Date();
+    const nextTimes = CONFIG.FETCH_TIMES
+        .map(time => {
+            const ms = msUntilTime(time);
+            return { time, ms, date: new Date(Date.now() + ms) };
+        })
+        .sort((a, b) => a.ms - b.ms)
+        .slice(0, 5);
     
+    nextTimes.forEach(({time, date}) => {
+        console.log(`   ${time} - ${date.toLocaleString()}`);
+    });
+    
+    // Schedule all times
     CONFIG.FETCH_TIMES.forEach(time => {
         const ms = msUntilTime(time);
-        const nextRun = new Date(Date.now() + ms);
-        console.log(`   ${time} - Next: ${nextRun.toLocaleString()}`);
         
         // Schedule first run
         setTimeout(() => {
@@ -339,19 +372,36 @@ function scheduleAutomation() {
         }, ms);
     });
     
-    console.log('\n✅ Fully automated! Leave this running.');
-    console.log('💡 Everything happens automatically:\n');
-    console.log('   1. Fetches war data from API');
-    console.log('   2. Generates leaderboard');
-    console.log('   3. Updates cumulative stats');
-    console.log('   4. Pushes to GitHub');
-    console.log('   5. Your website updates!\n');
-    console.log('⚠️  NOTE: Assumes no loot attacks');
-    console.log('💡 Use data-entry.html if you need to mark loot attacks\n');
+    console.log('\n✅ Scheduler active! Fetching every 30 minutes.\n');
 }
 
-// Start
-scheduleAutomation();
+// Schedule fetch at interval
+function scheduleIntervalFetch() {
+    const intervalMinutes = CONFIG.FETCH_INTERVAL / 1000 / 60;
+    console.log(`⏰ Scheduling fetch every ${intervalMinutes} minutes`);
+    console.log(`   Next run: ${new Date(Date.now() + CONFIG.FETCH_INTERVAL).toLocaleString()}\n`);
+    
+    // Run immediately
+    performFullAutomation();
+    
+    // Then repeat
+    setInterval(performFullAutomation, CONFIG.FETCH_INTERVAL);
+}
+
+// Start scheduler
+console.log('🤖 FULLY AUTOMATED WAR TRACKER');
+console.log('════════════════════════════════════════');
+console.log(`🏰 Clan: ${CONFIG.CLAN_TAG}`);
+console.log(`🔄 Auto-generate: ${CONFIG.AUTO_GENERATE_LEADERBOARD ? 'ENABLED' : 'DISABLED'}`);
+console.log(`⏱️  Fetch method: ${CONFIG.USE_INTERVAL ? 'Every 30 minutes' : 'Scheduled times'}`);
+console.log('════════════════════════════════════════\n');
+
+// Choose scheduling method
+if (CONFIG.USE_INTERVAL) {
+    scheduleIntervalFetch();
+} else {
+    scheduleTimedFetches();
+}
 
 // Handle graceful shutdown
 process.on('SIGINT', () => {
