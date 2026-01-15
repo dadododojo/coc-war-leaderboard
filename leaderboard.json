@@ -1,158 +1,538 @@
 {
-  "lastUpdated": "2026-01-13T09:30:00.774Z",
+  "lastUpdated": "2026-01-15T07:00:01.039Z",
   "players": [
-    {
-      "tag": "#GP2YVQ0RJ",
-      "name": "100% amos",
-      "townHallLevel": 13,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
     {
       "tag": "#PUUV8V08V",
       "name": "DEADSHOT 112830",
       "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
       },
       "attack2": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#8G8VV89JJ",
-      "name": "EvlGniz",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#99QUJCCYJ",
-      "name": "100% Meli",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#Q9UPUUGRL",
-      "name": "100% Rogers",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
+        "missed": false
       }
     },
     {
       "tag": "#PYR0JQC",
       "name": "Downsy m8",
       "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
       },
       "attack2": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
       }
     },
     {
       "tag": "#2VRP9CJY",
       "name": "Anon",
       "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
       },
       "attack2": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
       }
     },
     {
       "tag": "#8R8R0GL9",
       "name": "«#PATRICK#»",
       "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
       "attack1": {
-        "stars": 0,
-        "percentage": 0,
+        "stars": 3,
+        "percentage": 100,
         "isLoot": false,
-        "missed": true
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#VQUQ8992",
+      "name": "platypus",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#G2PQRR0QV",
+      "name": "BlueberyPancake",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#2LVYUPJ9Q",
+      "name": "Z E T S U SKY⚡",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#8G89CPJVU",
+      "name": "100% dado",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#P9PP80V20",
+      "name": "MR_MORNINGSTARR",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#GV90C0LU",
+      "name": "TN • Raiden",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#YGV99UU",
+      "name": "LittleSinn",
+      "townHallLevel": 17,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#9L0C0C82",
+      "name": "acowboy7",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#PRR2RJJ9U",
+      "name": "100% dadeux",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#LY9GC9LJQ",
+      "name": "Azend",
+      "townHallLevel": 15,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#9PVL282R8",
+      "name": "NISHANT 2.O",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#PU8L9PVJQ",
+      "name": "murph",
+      "townHallLevel": 18,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#QQGY0JYGR",
+      "name": "BlueberryPie",
+      "townHallLevel": 14,
+      "totalStars": 6,
+      "totalPercentage": 200,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#9UUG9GPC",
+      "name": "Innersinn",
+      "townHallLevel": 18,
+      "totalStars": 5,
+      "totalPercentage": 198,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 2,
+        "percentage": 98,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#8G8VV89JJ",
+      "name": "EvlGniz",
+      "townHallLevel": 18,
+      "totalStars": 5,
+      "totalPercentage": 187,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 87,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#9JJRCPQ08",
+      "name": "100% OZI",
+      "townHallLevel": 18,
+      "totalStars": 5,
+      "totalPercentage": 179,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 79,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#GP2YVQ0RJ",
+      "name": "100% amos",
+      "townHallLevel": 13,
+      "totalStars": 5,
+      "totalPercentage": 167,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 67,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#P8Y9JR8CP",
+      "name": "abhi",
+      "townHallLevel": 18,
+      "totalStars": 4,
+      "totalPercentage": 190,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 2,
+        "percentage": 96,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 94,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#LQ8CU8GPU",
+      "name": "Mr Owl",
+      "townHallLevel": 17,
+      "totalStars": 4,
+      "totalPercentage": 174,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 2,
+        "percentage": 97,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 77,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#99QUJCCYJ",
+      "name": "100% Meli",
+      "townHallLevel": 18,
+      "totalStars": 4,
+      "totalPercentage": 170,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 3,
+        "percentage": 100,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 1,
+        "percentage": 70,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#YQ8V829CQ",
+      "name": "GhosTAngeL",
+      "townHallLevel": 15,
+      "totalStars": 4,
+      "totalPercentage": 153,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 2,
+        "percentage": 59,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 94,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#Q9UPUUGRL",
+      "name": "100% Rogers",
+      "townHallLevel": 18,
+      "totalStars": 4,
+      "totalPercentage": 125,
+      "missedAttacks": 0,
+      "attack1": {
+        "stars": 2,
+        "percentage": 57,
+        "isLoot": false,
+        "missed": false
+      },
+      "attack2": {
+        "stars": 2,
+        "percentage": 68,
+        "isLoot": false,
+        "missed": false
+      }
+    },
+    {
+      "tag": "#LYGLRCQCR",
+      "name": "100% Amos",
+      "townHallLevel": 18,
+      "totalStars": 2,
+      "totalPercentage": 94,
+      "missedAttacks": 1,
+      "attack1": {
+        "stars": 2,
+        "percentage": 94,
+        "isLoot": false,
+        "missed": false
       },
       "attack2": {
         "stars": 0,
@@ -164,126 +544,6 @@
     {
       "tag": "#2822UV20V",
       "name": "Frost",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#9UUG9GPC",
-      "name": "Innersinn",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#VQUQ8992",
-      "name": "platypus",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#G2PQRR0QV",
-      "name": "BlueberyPancake",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#2LVYUPJ9Q",
-      "name": "Z E T S U SKY⚡",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#8G89CPJVU",
-      "name": "100% dado",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#P8Y9JR8CP",
-      "name": "abhi",
       "townHallLevel": 18,
       "totalStars": 0,
       "totalPercentage": 0,
@@ -322,269 +582,9 @@
       }
     },
     {
-      "tag": "#P9PP80V20",
-      "name": "MR_MORNINGSTARR",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#YQ8V829CQ",
-      "name": "GhosTAngeL",
-      "townHallLevel": 15,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#GV90C0LU",
-      "name": "TN • Raiden",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#LQ8CU8GPU",
-      "name": "Mr Owl",
-      "townHallLevel": 17,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#LYGLRCQCR",
-      "name": "100% Amos",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#YGV99UU",
-      "name": "LittleSinn",
-      "townHallLevel": 17,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#9L0C0C82",
-      "name": "acowboy7",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#PRR2RJJ9U",
-      "name": "100% dadeux",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#LY9GC9LJQ",
-      "name": "Azend",
-      "townHallLevel": 15,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#9PVL282R8",
-      "name": "NISHANT 2.O",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#9JJRCPQ08",
-      "name": "100% OZI",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
       "tag": "#LGRPC9CYG",
       "name": "John",
       "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#PU8L9PVJQ",
-      "name": "murph",
-      "townHallLevel": 18,
-      "totalStars": 0,
-      "totalPercentage": 0,
-      "missedAttacks": 2,
-      "attack1": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      },
-      "attack2": {
-        "stars": 0,
-        "percentage": 0,
-        "isLoot": false,
-        "missed": true
-      }
-    },
-    {
-      "tag": "#QQGY0JYGR",
-      "name": "BlueberryPie",
-      "townHallLevel": 14,
       "totalStars": 0,
       "totalPercentage": 0,
       "missedAttacks": 2,
